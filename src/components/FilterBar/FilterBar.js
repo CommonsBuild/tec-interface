@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from 'react'
 import { DropDown, GU, useLayout } from '@1hive/1hive-ui'
 import PropTypes from 'prop-types'
 
+import theme from '../theme'
 import TextFilter from './TextFilter'
 import DropdownFilter from './DropdownFilter'
 
@@ -36,6 +37,12 @@ const FilterBar = React.memo(
           flex-wrap: wrap;
           ${compactMode && `margin-top: ${1.5 * GU}px;`}
           ${compactMode && `margin-left: -${1.5 * GU}px;`}
+          & button {
+            border: ${`1px solid ${theme.brand.secondary.blue}`};
+          }
+          & svg {
+            color: ${theme.brand.secondary.blue};
+          }
         `}
       >
         <DropDown

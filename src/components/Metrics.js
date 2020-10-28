@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, GU, textStyle, Link, useLayout, useTheme } from '@1hive/1hive-ui'
+import { Box, GU, textStyle, Link, useLayout } from '@1hive/1hive-ui'
 
+import theme from './theme'
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
 import honeySvg from '../assets/honey.svg'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
@@ -18,7 +19,7 @@ const Metrics = React.memo(function Metrics({
 
   return (
     <Box
-      heading="Honey"
+      heading={stakeToken.name}
       css={`
         margin-bottom: ${2 * GU}px;
       `}
@@ -78,13 +79,11 @@ const Metrics = React.memo(function Metrics({
 })
 
 function Metric({ label, value, color }) {
-  const theme = useTheme()
-
   return (
     <>
       <p
         css={`
-          color: ${theme.contentSecondary};
+          color: ${theme.common.main};
           margin-bottom: ${1 * GU}px;
         `}
       >
@@ -93,7 +92,7 @@ function Metric({ label, value, color }) {
       <span
         css={`
           ${textStyle('title2')};
-          color: ${color || theme.content};
+          color: ${color || theme.common.main};
         `}
       >
         {value}
@@ -103,8 +102,6 @@ function Metric({ label, value, color }) {
 }
 
 function TokenBalance({ label, token, value }) {
-  const theme = useTheme()
-
   const price = useUniswapHnyPrice()
   const usdValue = value * price
 
@@ -113,7 +110,7 @@ function TokenBalance({ label, token, value }) {
       <Metric label={label} value={formatTokenAmount(value, token.decimals)} />
       <div
         css={`
-          color: ${theme.green};
+          color: ${theme.brand.secondary.blue};
         `}
       >
         $ {formatTokenAmount(usdValue, token.decimals)}
@@ -123,15 +120,14 @@ function TokenBalance({ label, token, value }) {
 }
 
 function TokenPrice({ token }) {
-  const theme = useTheme()
   const price = useUniswapHnyPrice()
 
   return (
     <div>
       <Metric
-        label="Honey price"
+        label={`${token.name} price`}
         value={`$${formatDecimals(price, 2)}`}
-        color={theme.green}
+        color={theme.brand.secondary.blue}
       />
       <Link
         href={`https://honeyswap.org/#/swap?inputCurrency=${token.id}`}
