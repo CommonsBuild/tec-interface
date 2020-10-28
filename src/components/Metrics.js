@@ -3,7 +3,7 @@ import { Box, GU, textStyle, Link, useLayout } from '@1hive/1hive-ui'
 
 import theme from './theme'
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
-import honeySvg from '../assets/honey.svg'
+import tokenIconSvg from '../assets/token.svg'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
 
 const Metrics = React.memo(function Metrics({
@@ -27,8 +27,8 @@ const Metrics = React.memo(function Metrics({
       <div
         css={`
           display: ${compactMode ? 'block' : 'flex'};
-          align-items: flex-start;
-          justify-content: space-between;
+          align-items: center;
+          justify-content: space-around;
         `}
       >
         <div
@@ -39,13 +39,12 @@ const Metrics = React.memo(function Metrics({
           `}
         >
           <img
-            src={honeySvg}
+            src={tokenIconSvg}
             height="60"
             width="60"
             alt=""
             onClick={onExecuteIssuance}
             css={`
-              margin-right: ${4 * GU}px;
               cursor: pointer;
             `}
           />
@@ -121,11 +120,10 @@ function TokenBalance({ label, token, value }) {
 
 function TokenPrice({ token }) {
   const price = useUniswapHnyPrice()
-
   return (
     <div>
       <Metric
-        label={`${token.name} price`}
+        label={`${token.symbol} Price`}
         value={`$${formatDecimals(price, 2)}`}
         color={theme.brand.secondary.blue}
       />
