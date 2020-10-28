@@ -13,13 +13,14 @@ import {
 } from '@1hive/1hive-ui'
 import { useAppState } from '../providers/AppState'
 
+import connect from '../base/connect'
 import BigNumber from '../lib/bigNumber'
 import { toDecimals } from '../lib/math-utils'
 import { formatTokenAmount } from '../lib/token-utils'
 import { calculateThreshold, getMaxConviction } from '../lib/conviction'
 
 import { ZERO_ADDR } from '../constants'
-const FORUM_POST_REGEX = /https:\/\/forum.1hive.org\/t\/.*?\/([0-9]+)/
+const FORUM_POST_REGEX = /https:\/\/forum.tecommons.org\/t\/.*?\/([0-9]+)/
 
 const NULL_PROPOSAL_TYPE = -1
 const FUNDING_PROPOSAL = 1
@@ -266,10 +267,10 @@ const AddProposalPanel = React.memo(({ onSubmit }) => {
       </Field>
       <Info title="Proposal creation guidelines">
         In order to create a proposal you must first create a post on the{' '}
-        <Link href="https://forum.1hive.org/new-topic?category=proposals">
-          1Hive Forum
+        <Link href={`${connect.discourse}/new-topic?category=proposals`}>
+          TECommons Forum
         </Link>{' '}
-        under the 🌿 Proposals category and paste the link to the corresponding
+        under the 🌱 Proposals category and paste the link to the corresponding
         post in the LINK field.
       </Info>
       <Button

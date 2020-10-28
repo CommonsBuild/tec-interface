@@ -1,6 +1,8 @@
 import React from 'react'
 import { GU, Link as AragonLink, textStyle, useTheme } from '@1hive/1hive-ui'
 import styled from 'styled-components'
+
+import connect from '../base/connect'
 import Layout from './Layout'
 import fullLogoSvg from '../assets/fullLogo.svg'
 
@@ -51,16 +53,16 @@ export default function Footer({ compact }) {
             >
               Community
             </h5>
-            <Link href="https://discord.gg/kBNrHP" external>
+            <Link href={connect.discord} external>
               Discord
             </Link>
-            <Link href="https://github.com/TECommons" external>
+            <Link href={connect.github} external>
               Github
             </Link>
-            <Link href="https://twitter.com/tecmns" external>
+            <Link href={connect.twitter} external>
               Twitter
             </Link>
-            <Link href="https://forum.1hive.org/" external>
+            <Link href={connect.discouse} external>
               Forum
             </Link>
           </div>
