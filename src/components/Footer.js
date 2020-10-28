@@ -51,20 +51,20 @@ export default function Footer({ compact }) {
             >
               Community
             </h5>
-            <Link href="https://discord.gg/4fm7pgB" external>
+            <Link href="https://discord.gg/kBNrHP" external>
               Discord
             </Link>
-            <Link href="https://github.com/1Hive" external>
+            <Link href="https://github.com/TECommons" external>
               Github
             </Link>
-            <Link href="https://twitter.com/1HiveOrg" external>
+            <Link href="https://twitter.com/tecmns" external>
               Twitter
             </Link>
             <Link href="https://forum.1hive.org/" external>
               Forum
             </Link>
           </div>
-          <div>
+          {/* <div>
             <h5
               css={`
                 ${textStyle('body1')};
@@ -79,7 +79,7 @@ export default function Footer({ compact }) {
             >
               Handbook
             </Link>
-          </div>
+          </div> */}
         </div>
       </Layout>
     </footer>
