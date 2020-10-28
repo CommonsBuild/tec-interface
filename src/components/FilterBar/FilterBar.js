@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react'
 import { DropDown, GU, useLayout } from '@1hive/1hive-ui'
 import PropTypes from 'prop-types'
 
-import theme from '../theme'
+import theme from '../../base/theme'
 import TextFilter from './TextFilter'
 import DropdownFilter from './DropdownFilter'
 

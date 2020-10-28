@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, GU, textStyle, Link, useLayout } from '@1hive/1hive-ui'
 
-import theme from './theme'
+import theme from '../base/theme'
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
 import tokenIconSvg from '../assets/token.svg'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'

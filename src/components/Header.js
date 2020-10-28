@@ -3,7 +3,7 @@ import { GU, Link } from '@1hive/1hive-ui'
 import AccountModule from './Account/AccountModule'
 import Layout from './Layout'
 
-import theme from '../components/theme'
+import theme from '../base/theme'
 import logoSvg from '../assets/logo.svg'
 import headerBackgroundSvg from '../assets/header-background.svg'
 import logoTextSvg from '../assets/logoText.svg'

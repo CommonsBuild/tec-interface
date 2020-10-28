@@ -8,6 +8,7 @@ export default {
     secondary: {
       purple: '#7622A8',
       blue: '#03B3FF',
+      yellow: '#7C9403',
     },
   },
   common: {

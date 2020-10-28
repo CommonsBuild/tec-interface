@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import {
   Box,
   Button,
@@ -18,6 +18,7 @@ import { ConvictionBar } from '../components/ConvictionVisuals'
 import Balance from '../components/Balance'
 import FilterBar from '../components/FilterBar/FilterBar'
 import IdentityBadge from '../components/IdentityBadge'
+import theme from '../base/theme'
 import { useWallet } from '../providers/Wallet'
 import {
   PROPOSAL_STATUS_EXECUTED_STRING,
@@ -126,6 +127,13 @@ const Proposals = React.memo(
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                & > button {
+                  background: linear-gradient(
+                    90deg,
+                    ${theme.brand.secondary.yellow} 0%,
+                    ${theme.brand.primary.yellow} 100%
+                  );
+                }
               `}
             >
               {account && (
