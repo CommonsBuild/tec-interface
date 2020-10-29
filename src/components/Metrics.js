@@ -91,7 +91,7 @@ function Metric({ label, value, color }) {
       <span
         css={`
           ${textStyle('title2')};
-          color: ${color || theme.contentSecondary};
+          color: ${color || theme.content};
         `}
       >
         {value}

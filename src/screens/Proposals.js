@@ -127,13 +127,6 @@ const Proposals = React.memo(
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                & > button {
-                  background: linear-gradient(
-                    90deg,
-                    ${theme.blue} 0%,
-                    ${theme.yellow} 100%
-                  );
-                }
               `}
             >
               {account && (

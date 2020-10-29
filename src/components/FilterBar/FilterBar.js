@@ -37,12 +37,6 @@ const FilterBar = React.memo(
           flex-wrap: wrap;
           ${compactMode && `margin-top: ${1.5 * GU}px;`}
           ${compactMode && `margin-left: -${1.5 * GU}px;`}
-          & button {
-            border: ${`1px solid ${theme.blue}`};
-          }
-          & svg {
-            color: ${theme.blue};
-          }
         `}
       >
         <DropDown
