@@ -51,7 +51,7 @@ const SupportersDistribution = React.memo(function SupportersDistribution({
     return displayedStakes(stakes, totalTokensStaked, stakeToken)
   }, [stakes, totalTokensStaked, stakeToken])
 
-  const colors = [theme.green, theme.red, theme.purple, theme.yellow]
+  const colors = [theme.blue, theme.red, theme.purple, theme.yellow]
 
   return (
     <Box heading="Supported by" padding={2 * GU}>

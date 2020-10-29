@@ -1,14 +1,14 @@
 import React from 'react'
-import { GU, Link } from '@1hive/1hive-ui'
+import { GU, Link, useTheme } from '@1hive/1hive-ui'
 import AccountModule from './Account/AccountModule'
 import Layout from './Layout'
 
-import theme from '../base/theme'
 import logoSvg from '../assets/logo.svg'
 import headerBackgroundSvg from '../assets/header-background.svg'
 import logoTextSvg from '../assets/logoText.svg'
 
 function Header({ compact }) {
+  const theme = useTheme()
   const Icon = (
     <Link href="/#" external={false}>
       <img src={logoSvg} height={compact ? 40 : 60} alt="" />
@@ -20,7 +20,7 @@ function Header({ compact }) {
   return (
     <header
       css={`
-        background-color: ${theme.brand.primary.yellow};
+        background-color: ${theme.yellow};
         margin-bottom: ${compact ? `${2 * GU}px` : 0};
       `}
     >

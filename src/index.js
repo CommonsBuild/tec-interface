@@ -11,7 +11,17 @@ import { AppStateProvider } from './providers/AppState'
 ReactDOM.render(
   <WalletProvider>
     <AppStateProvider>
-      <Main assetsUrl="/aragon-ui/" layout={false}>
+      <Main
+        assetsUrl="/aragon-ui/"
+        theme={{
+          _name: 'themeDarkCustom',
+          _appearance: 'dark',
+          yellow: '#DEFB48',
+          blue: '#03B3FF',
+          purple: '#7622A8',
+        }}
+        layout={false}
+      >
         <HashRouter>
           <MainView>
             <App />

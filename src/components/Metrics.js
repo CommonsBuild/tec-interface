@@ -1,7 +1,6 @@
 import React from 'react'
-import { Box, GU, textStyle, Link, useLayout } from '@1hive/1hive-ui'
+import { Box, GU, textStyle, Link, useLayout, useTheme } from '@1hive/1hive-ui'
 
-import theme from '../base/theme'
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
 import tokenIconSvg from '../assets/token.svg'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
@@ -78,11 +77,12 @@ const Metrics = React.memo(function Metrics({
 })
 
 function Metric({ label, value, color }) {
+  const theme = useTheme()
   return (
     <>
       <p
         css={`
-          color: ${theme.common.main};
+          color: ${theme.contentSecondary};
           margin-bottom: ${1 * GU}px;
         `}
       >
@@ -91,7 +91,7 @@ function Metric({ label, value, color }) {
       <span
         css={`
           ${textStyle('title2')};
-          color: ${color || theme.common.main};
+          color: ${color || theme.contentSecondary};
         `}
       >
         {value}
@@ -101,6 +101,7 @@ function Metric({ label, value, color }) {
 }
 
 function TokenBalance({ label, token, value }) {
+  const theme = useTheme()
   const price = useUniswapHnyPrice()
   const usdValue = value * price
 
@@ -109,7 +110,7 @@ function TokenBalance({ label, token, value }) {
       <Metric label={label} value={formatTokenAmount(value, token.decimals)} />
       <div
         css={`
-          color: ${theme.brand.secondary.blue};
+          color: ${theme.blue};
         `}
       >
         $ {formatTokenAmount(usdValue, token.decimals)}
@@ -120,12 +121,13 @@ function TokenBalance({ label, token, value }) {
 
 function TokenPrice({ token }) {
   const price = useUniswapHnyPrice()
+  const theme = useTheme()
   return (
     <div>
       <Metric
         label={`${token.symbol} Price`}
         value={`$${formatDecimals(price, 2)}`}
-        color={theme.brand.secondary.blue}
+        color={theme.blue}
       />
       <Link
         href={`https://honeyswap.org/#/swap?inputCurrency=${token.id}`}
