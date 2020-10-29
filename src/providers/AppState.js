@@ -19,12 +19,14 @@ function AppStateProvider({ children }) {
     convictionVoting,
     installedApps,
     minThresholdStakePercentage,
-    requestToken,
     stakeToken,
     totalStaked,
     errorFetchingApp,
     ...appData
   } = useAppData(organization)
+
+  // TODO: Get requestToken form app data
+  const requestToken = {id:'0x0000000000000000000000000000000000000000', decimals: 18, name: 'xDAI', symbol: 'xDAI'}
 
   const vaultBalance = useVaultBalance(installedApps, requestToken)
 
