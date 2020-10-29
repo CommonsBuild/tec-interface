@@ -58,7 +58,7 @@ const StakingTokens = React.memo(function StakingTokens({ myStakes }) {
     return null
   }
 
-  const colors = [theme.green, theme.red, theme.purple, theme.yellow]
+  const colors = [theme.blue, theme.red, theme.purple, theme.yellow]
 
   return (
     <Box heading="My supported proposals" padding={3 * GU}>

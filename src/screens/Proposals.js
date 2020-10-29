@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import {
   Box,
   Button,
@@ -46,6 +46,7 @@ const Proposals = React.memo(
   }) => {
     const { account } = useWallet()
     const { layoutName } = useLayout()
+    const theme = useTheme()
     const compactMode = layoutName === 'small'
 
     const {

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react'
-import { DropDown, GU, useLayout } from '@1hive/1hive-ui'
+import { DropDown, GU, useLayout, useTheme } from '@1hive/1hive-ui'
 import PropTypes from 'prop-types'
 
 import TextFilter from './TextFilter'
@@ -20,6 +20,7 @@ const FilterBar = React.memo(
     const [textFieldVisible, setTextFieldVisible] = useState(false)
     const textFilterOpener = useRef(null)
     const { layoutName } = useLayout()
+    const theme = useTheme()
     const compactMode = layoutName === 'small'
 
     const handlerTextFilterClick = useCallback(() => {

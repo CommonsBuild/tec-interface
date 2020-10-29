@@ -1,8 +1,10 @@
 import React from 'react'
 import { GU, Link as AragonLink, textStyle, useTheme } from '@1hive/1hive-ui'
 import styled from 'styled-components'
+
+import connect from '../base/connect'
 import Layout from './Layout'
-import logoSvg from '../assets/logo.svg'
+import fullLogoSvg from '../assets/fullLogo.svg'
 
 export default function Footer({ compact }) {
   const theme = useTheme()
@@ -13,7 +15,7 @@ export default function Footer({ compact }) {
         flex-shrink: 0;
         width: 100%;
         padding: ${5 * GU}px ${compact ? `${3 * GU}px` : 0};
-        background: ${theme.surface};
+        background-color: #fff;
       `}
     >
       <Layout>
@@ -40,31 +42,32 @@ export default function Footer({ compact }) {
               width: ${40 * GU}px;
             `}
           >
-            <img src={logoSvg} height="40" alt="" />
+            <img src={fullLogoSvg} height="40" alt="" />
           </div>
           <div>
             <h5
               css={`
-                ${textStyle('body1')};
+                color: ${theme.contentSecondary};
+                ${textStyle('title4')};
                 margin-bottom: ${1.5 * GU}px;
               `}
             >
               Community
             </h5>
-            <Link href="https://discord.gg/4fm7pgB" external>
+            <Link href={connect.discord} external>
               Discord
             </Link>
-            <Link href="https://github.com/1Hive" external>
+            <Link href={connect.github} external>
               Github
             </Link>
-            <Link href="https://twitter.com/1HiveOrg" external>
+            <Link href={connect.twitter} external>
               Twitter
             </Link>
-            <Link href="https://forum.1hive.org/" external>
+            <Link href={connect.discourse} external>
               Forum
             </Link>
           </div>
-          <div>
+          {/* <div>
             <h5
               css={`
                 ${textStyle('body1')};
@@ -79,7 +82,7 @@ export default function Footer({ compact }) {
             >
               Handbook
             </Link>
-          </div>
+          </div> */}
         </div>
       </Layout>
     </footer>
