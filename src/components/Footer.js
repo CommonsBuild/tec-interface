@@ -15,7 +15,7 @@ export default function Footer({ compact }) {
         flex-shrink: 0;
         width: 100%;
         padding: ${5 * GU}px ${compact ? `${3 * GU}px` : 0};
-        background: ${theme.surface};
+        background-color: #fff;
       `}
     >
       <Layout>
@@ -47,7 +47,8 @@ export default function Footer({ compact }) {
           <div>
             <h5
               css={`
-                ${textStyle('body1')};
+                color: ${theme.contentSecondary};
+                ${textStyle('title4')};
                 margin-bottom: ${1.5 * GU}px;
               `}
             >
@@ -62,7 +63,7 @@ export default function Footer({ compact }) {
             <Link href={connect.twitter} external>
               Twitter
             </Link>
-            <Link href={connect.discouse} external>
+            <Link href={connect.discourse} external>
               Forum
             </Link>
           </div>
