@@ -26,7 +26,7 @@ import {
 
 import { addressesEqualNoSum as addressesEqual } from '../lib/web3-utils'
 
-const ENTRIES_PER_PAGE = 5
+const ENTRIES_PER_PAGE = 10
 
 const Proposals = React.memo(
   ({
