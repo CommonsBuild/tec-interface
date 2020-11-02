@@ -2,6 +2,7 @@ import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo } from 'react'
 import {
   Box,
+  DropDown,
   Button,
   DataView,
   Link,
@@ -26,7 +27,7 @@ import {
 
 import { addressesEqualNoSum as addressesEqual } from '../lib/web3-utils'
 
-const ENTRIES_PER_PAGE = 10
+const ENTRIES_PER_PAGE = [5,10,25,50]
 
 const Proposals = React.memo(
   ({
@@ -118,6 +119,13 @@ const Proposals = React.memo(
       [history]
     )
 
+    let current_entries_per_page = ENTRIES_PER_PAGE[0]
+    let selected_entries_per_page = 1
+    const updateProposalsPerPage = useCallback((selected, value) => {
+      current_entries_per_page = ENTRIES_PER_PAGE[selected]
+      selected_entries_per_page = selected
+    }, [])
+
     return (
       <div>
         {!compactMode && (
@@ -138,6 +146,14 @@ const Proposals = React.memo(
                   display={compactMode ? 'icon' : 'label'}
                 />
               )}
+              <div>
+                <DropDown
+                  id="perpage"
+                  items={ENTRIES_PER_PAGE}
+                  selected={selected_entries_per_page}
+                  onChange={updateProposalsPerPage}
+                />
+              </div>
               <FilterBar
                 proposalsSize={filteredProposals.length}
                 proposalExecutionStatusFilter={proposalExecutionStatusFilter}
@@ -273,7 +289,7 @@ const Proposals = React.memo(
             return entriesElements
           }}
           tableRowHeight={14 * GU}
-          entriesPerPage={ENTRIES_PER_PAGE}
+          entriesPerPage={current_entries_per_page}
           page={currentPage}
           onPageChange={handleProposalPageChange}
         />
