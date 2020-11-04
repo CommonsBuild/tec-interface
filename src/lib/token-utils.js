@@ -40,7 +40,7 @@ const KNOWN_TOKENS_FALLBACK = new Map([
   ],
 ])
 
-const LOCAL_TOKEN_ICONS = new Map([['TESTTEC', tokenIconSvg]])
+const LOCAL_TOKEN_ICONS = new Map([['xDAI', tokenIconSvg]])
 
 export const tokenDataFallback = (tokenAddress, fieldName, networkType) => {
   // The fallback list is without checksums
