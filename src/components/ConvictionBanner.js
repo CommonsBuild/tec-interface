@@ -15,7 +15,6 @@ const MOBILE_BANNER_HEIGHT = 64
 function ConvictionBanner() {
   const [visible, setVisible] = useState(!!banner.text)
   const { below } = useViewport()
-  console.log(visible)
 
   const compactMode = below('medium')
   useEffect(() => {

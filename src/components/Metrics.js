@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, GU, textStyle, Link, useLayout, useTheme } from '@1hive/1hive-ui'
 
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
-import tokenIconSvg from '../assets/token.svg'
+import tokenIconSvg from '../assets/tec-token.svg'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
 
 const Metrics = React.memo(function Metrics({
