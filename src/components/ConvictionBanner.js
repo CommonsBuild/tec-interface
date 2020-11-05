@@ -44,11 +44,12 @@ function ConvictionBanner() {
           key={key}
           style={{ ...props, overflow: 'hidden' }}
           css={`
+            height: ${BANNER_HEIGHT}px;
             width: 100%;
             background: linear-gradient(
               204.88deg,
-              #32fff5 -103.98%,
-              #01bfe3 80.13%
+              #0f2eee -103.98%,
+              #03b3ff 80.13%
             );
             box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
             box-sizing: border-box;
@@ -107,7 +108,6 @@ function ConvictionBanner() {
             css={`
               opacity: ${compactMode ? '0' : '1'};
               position: absolute;
-              top: ${0.25 * GU}px;
               right: ${2 * GU}px;
               align-self: center;
             `}
