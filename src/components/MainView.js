@@ -1,6 +1,7 @@
 import React from 'react'
 import { GU, useViewport } from '@1hive/1hive-ui'
 
+import ConvictionBanner from './ConvictionBanner'
 import Footer from './Footer'
 import Header from './Header'
 import Layout from './Layout'
@@ -17,6 +18,9 @@ function MainView({ children }) {
         height: 100vh;
       `}
     >
+      <div>
+        <ConvictionBanner />
+      </div>
       <Header compact={compactMode} />
 
       <div
