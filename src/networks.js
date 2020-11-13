@@ -27,7 +27,8 @@ const networks = {
     name: 'xDai',
     type: 'xdai',
     defaultEthNode: 'https://xdai.poanetwork.dev/',
-    honeypot: '0x070e93753657a6bfd7055bf99e762bfb065a1037',
+    honeypot: '0xd0817aa0f770d024f42f0222dba37536a05118dc',
+    bancorFormula: '0xad4f46fb39B595579BDdDaa916aF88fc9210EE31',
   },
 }
 

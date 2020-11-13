@@ -121,15 +121,18 @@ export function useAppData(organization) {
   const config = useConfigSubscription(appData.convictionVoting)
   const proposals = useProposalsSubscription(appData.convictionVoting)
 
+  // TODO: Get requestToken form thegraph
+  const requestToken = {id:'0xe91d153e0b41518a2ce8dd3d7944fa863463a97d', decimals: 18, name: 'Wrapped xDAI', symbol: 'wxDAI'}
+
   // Stakes done across all proposals on this app
   // Includes old and current stakes
   const stakesHistory = useStakesHistorySubscription(appData.convictionVoting)
 
-  return { ...appData, ...config, proposals, stakesHistory }
+  return { ...appData, ...config, requestToken, proposals, stakesHistory }
 }
 
-export function useVaultBalance(installedApps, token, timeout = 1000) {
-  const vaultAddress = getAppAddressByName(installedApps, 'vault')
+export function useVaultBalance(installedApps, token, last = false, timeout = 1000) {
+  const vaultAddress = getAppAddressByName(installedApps, 'vault', last)
   const vaultContract = useContractReadOnly(vaultAddress, vaultAbi)
 
   const [vaultBalance, setVaultBalance] = useState(new BigNumber(-1))

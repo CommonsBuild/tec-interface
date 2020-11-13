@@ -3,7 +3,7 @@ import { Box, GU, textStyle, Link, useLayout, useTheme } from '@1hive/1hive-ui'
 
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
 import tokenIconSvg from '../assets/tec-token.svg'
-import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
+import { useBondingCurvePrice } from '../hooks/useBondingCurvePrice'
 
 const Metrics = React.memo(function Metrics({
   totalSupply,
@@ -102,8 +102,9 @@ function Metric({ label, value, color }) {
 
 function TokenBalance({ label, token, value }) {
   const theme = useTheme()
-  const price = useUniswapHnyPrice()
-  const usdValue = value * price
+  const usdValue = token.symbol !== 'xDAI' && token.symbol !== 'wxDAI' ?
+    useBondingCurvePrice(value.toString(10), false):
+    value
 
   return (
     <>
@@ -120,17 +121,17 @@ function TokenBalance({ label, token, value }) {
 }
 
 function TokenPrice({ token }) {
-  const price = useUniswapHnyPrice()
+  const price = useBondingCurvePrice(1e8, false)/1e8
   const theme = useTheme()
   return (
     <div>
       <Metric
         label={`${token.symbol} Price`}
-        value={`$${formatDecimals(price, 2)}`}
+        value={`$${formatDecimals(price, 8)}`}
         color={theme.blue}
       />
       <Link
-        href={`https://honeyswap.org/#/swap?inputCurrency=${token.id}`}
+        href={`https://convert.tecommons.org`}
         external
         css={`
           ${textStyle('body3')};
@@ -138,7 +139,7 @@ function TokenPrice({ token }) {
           display: flex;
         `}
       >
-        Trade
+        Convert
       </Link>
     </div>
   )

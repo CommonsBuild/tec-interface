@@ -32,6 +32,7 @@ export function transformStakeHistoryData(stake) {
   }
 }
 
-export function getAppAddressByName(apps, appName) {
+export function getAppAddressByName(apps, appName, last = false) {
+  apps = apps && last ? apps.slice().reverse() : apps
   return apps?.find(app => app.name === appName).address || ''
 }

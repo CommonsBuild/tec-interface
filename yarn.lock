@@ -25,7 +25,7 @@
     recursive-copy "^2.0.9"
     use-inside "^0.2.0"
 
-"@1hive/connect-conviction-voting@0.4.1":
+"@1hive/connect-conviction-voting@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@1hive/connect-conviction-voting/-/connect-conviction-voting-0.4.1.tgz#ac67b9d19e3e5b420d0cb30e61aefc4f00188889"
   integrity sha512-v9LtdirmdRIRX9v/GDRzshz+RXf4lMXrfbAmD0fEIFs0ZbJoJee1igfd2DoFqewzjmfOey6AyOlQf/K5kniyaA==
