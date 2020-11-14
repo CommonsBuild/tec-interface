@@ -108,7 +108,7 @@ function TokenBalance({ label, token, value }) {
 
   return (
     <>
-      <Metric label={label} value={formatTokenAmount(value, token.decimals)} />
+      <Metric label={label} value={`${formatTokenAmount(value, token.decimals)} ${token.symbol}`} />
       <div
         css={`
           color: ${theme.blue};
