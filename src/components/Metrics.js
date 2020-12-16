@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, GU, textStyle, Link, useLayout, useTheme } from '@1hive/1hive-ui'
+import { Box, GU, textStyle, Link, useLayout, useTheme } from '@tecommons/ui'
 
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
 import tokenIconSvg from '../assets/tec-token.svg'

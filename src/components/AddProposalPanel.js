@@ -10,7 +10,7 @@ import {
   MEDIUM_RADIUS,
   TextInput,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { useAppState } from '../providers/AppState'
 
 import connect from '../base/connect'

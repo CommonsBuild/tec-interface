@@ -12,7 +12,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import Balance from '../components/Balance'
 import {
   ConvictionCountdown,

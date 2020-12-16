@@ -5,7 +5,7 @@ import {
   IconDown,
   useTheme,
   useViewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 function HeaderModule({ icon, content, onClick }) {
   const { above } = useViewport()
   const theme = useTheme()

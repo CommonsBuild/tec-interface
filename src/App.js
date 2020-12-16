@@ -1,16 +1,16 @@
-import React from 'react'
-import { SidePanel, Split } from '@1hive/1hive-ui'
+import React from "react";
+import { SidePanel, Split } from "@tecommons/ui";
 
-import AddProposalPanel from './components/AddProposalPanel'
-import AppLoader from './components/AppLoader'
-import MainScreen from './screens/MainScreen'
-import NetworkErrorModal from './components/NetworkErrorModal'
-import StakingTokens from './screens/StakingTokens'
-import Wallet from './components/Wallet'
+import AddProposalPanel from "./components/AddProposalPanel";
+import AppLoader from "./components/AppLoader";
+import MainScreen from "./screens/MainScreen";
+import NetworkErrorModal from "./components/NetworkErrorModal";
+import StakingTokens from "./screens/StakingTokens";
+import Wallet from "./components/Wallet";
 
-import useAppLogic from './app-logic'
-import { useWallet } from './providers/Wallet'
-import useSelectedProposal from './hooks/useSelectedProposal'
+import useAppLogic from "./app-logic";
+import { useWallet } from "./providers/Wallet";
+import useSelectedProposal from "./hooks/useSelectedProposal";
 
 const App = React.memo(function App() {
   const {
@@ -20,11 +20,11 @@ const App = React.memo(function App() {
     proposals,
     proposalPanel,
     totalStaked,
-    fetchingErrors,
-  } = useAppLogic()
+    fetchingErrors
+  } = useAppLogic();
 
-  const { account } = useWallet()
-  const selectedProposal = useSelectedProposal(proposals)
+  const { account } = useWallet();
+  const selectedProposal = useSelectedProposal(proposals);
 
   const MainScreenComponent = (
     <MainScreen
@@ -40,8 +40,8 @@ const App = React.memo(function App() {
       selectedProposal={selectedProposal}
       totalActiveTokens={totalStaked}
     />
-  )
-  
+  );
+
   return (
     <div>
       <NetworkErrorModal visible={fetchingErrors} />
@@ -72,7 +72,7 @@ const App = React.memo(function App() {
         <AddProposalPanel onSubmit={actions.newProposal} />
       </SidePanel>
     </div>
-  )
-})
+  );
+});
 
-export default App
+export default App;

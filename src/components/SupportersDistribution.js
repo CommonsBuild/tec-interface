@@ -7,7 +7,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { useWallet } from '../providers/Wallet'
 import { useAppState } from '../providers/AppState'
 import { formatTokenAmount } from '../lib/token-utils'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, IconConnect, RADIUS, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, IconConnect, RADIUS, textStyle, useTheme } from '@tecommons/ui'
 
 function AccountNotConnected() {
   const theme = useTheme()

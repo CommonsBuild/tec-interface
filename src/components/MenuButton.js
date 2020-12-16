@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonIcon, IconMenu } from '@1hive/1hive-ui'
+import { ButtonIcon, IconMenu } from '@tecommons/ui'
 
 export default props => (
   <ButtonIcon

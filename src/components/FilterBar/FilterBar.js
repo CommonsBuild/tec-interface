@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react'
-import { DropDown, GU, useLayout, useTheme } from '@1hive/1hive-ui'
+import { DropDown, GU, useLayout, useTheme } from '@tecommons/ui'
 import PropTypes from 'prop-types'
 
 import TextFilter from './TextFilter'

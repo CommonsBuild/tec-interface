@@ -6,7 +6,7 @@ import {
   shortenAddress,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import styled from 'styled-components'
 import { useAppState } from '../providers/AppState'
 import { useWallet } from '../providers/Wallet'

@@ -8,7 +8,7 @@ import {
   RADIUS,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import IdentityBadge from '../IdentityBadge'
 import { getProviderFromUseWalletId } from '../../ethereum-providers'
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard'
