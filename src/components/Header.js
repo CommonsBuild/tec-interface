@@ -5,7 +5,7 @@ import Layout from './Layout'
 
 import logoSvg from '../assets/logo.svg'
 import headerBackgroundSvg from '../assets/header-background.svg'
-import logoTextSvg from '../assets/logoText.svg'
+import logo from '../assets/logo-light-bg.svg'
 
 function Header({ compact }) {
   const theme = useTheme()
@@ -20,7 +20,7 @@ function Header({ compact }) {
   return (
     <header
       css={`
-        background-color: ${theme.yellow};
+        background-color: ${theme.background};
         margin-bottom: ${compact ? `${2 * GU}px` : 0};
       `}
     >
@@ -30,11 +30,11 @@ function Header({ compact }) {
           background-size: 811px 600px;
           background-position: center;
           padding: ${
-            compact ? `${3 * GU}px` : `${5.625 * GU}px 0 ${8.75 * GU}px 0`
+            compact ? `0px` : `0px 0 ${8.75 * GU}px 0`
           };
         `}
       >
-        <Layout>
+        
           <div
             css={`
               display: flex;
@@ -44,10 +44,10 @@ function Header({ compact }) {
           >
             <div
               css={`
-                width: ${headerItemsWidth}px;
+                width: 100%;
               `}
             >
-              {compact ? Icon : <img src={logoTextSvg} height="50" alt="" />}
+              {compact ? Icon : <img src={logo} height="126" alt="" />}
             </div>
             {!compact && <div>{Icon}</div>}
             <div
@@ -58,7 +58,7 @@ function Header({ compact }) {
               <AccountModule compact={compact} />
             </div>
           </div>
-        </Layout>
+        
       </div>
     </header>
   )

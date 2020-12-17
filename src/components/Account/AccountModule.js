@@ -174,6 +174,9 @@ function AccountModule({ compact }) {
           onClick={toggle}
           display={compact ? 'icon' : 'all'}
           disabled={isLoading}
+          css={`
+            right: 45px;
+          `}
         />
       )}
 
