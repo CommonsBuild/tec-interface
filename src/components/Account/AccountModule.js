@@ -175,7 +175,7 @@ function AccountModule({ compact }) {
           display={compact ? 'icon' : 'all'}
           disabled={isLoading}
           css={`
-            right: 45px;
+            right: 56px;
           `}
         />
       )}

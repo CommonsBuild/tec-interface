@@ -1,11 +1,11 @@
 import React from 'react'
 import { GU, Link, useTheme } from '@tecommons/ui'
 import AccountModule from './Account/AccountModule'
-import Layout from './Layout'
 
-import logoSvg from '../assets/logo.svg'
 import headerBackgroundSvg from '../assets/header-background.svg'
 import logo from '../assets/logo-light-bg.svg'
+import logoFullText from '../assets/tecFullTextLogo.svg'
+import logoSvg from '../assets/logo.svg'
 
 function Header({ compact }) {
   const theme = useTheme()
@@ -30,11 +30,10 @@ function Header({ compact }) {
           background-size: 811px 600px;
           background-position: center;
           padding: ${
-            compact ? `0px` : `0px 0 ${8.75 * GU}px 0`
+            compact ? `0px` : `0px 0 ${4 * GU}px 0`
           };
         `}
       >
-        
           <div
             css={`
               display: flex;
@@ -47,7 +46,20 @@ function Header({ compact }) {
                 width: 100%;
               `}
             >
-              {compact ? Icon : <img src={logo} height="126" alt="" />}
+              { compact ? 
+                Icon 
+              :
+                <div css={`
+                  display: flex;
+                  align-items: center;
+                `}>
+                  <img src={logo} height="126" alt="" />
+                  <img src={logoFullText} alt="" css={`
+                    height: 50px;
+                    margin-left: ${4.2 * GU}px;
+                  `}  />
+                </div>
+              }
             </div>
             {!compact && <div>{Icon}</div>}
             <div
@@ -58,7 +70,6 @@ function Header({ compact }) {
               <AccountModule compact={compact} />
             </div>
           </div>
-        
       </div>
     </header>
   )

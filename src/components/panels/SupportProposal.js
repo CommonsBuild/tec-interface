@@ -9,7 +9,7 @@ import {
   TextInput,
   useSidePanelFocusOnReady,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { toDecimals, round, pct } from '../../lib/math-utils'
 import useAccountTotalStaked from '../../hooks/useAccountTotalStaked'
 import { formatTokenAmount } from '../../lib/token-utils'
