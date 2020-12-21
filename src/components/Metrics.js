@@ -1,8 +1,8 @@
 import React from 'react'
-import { Box, GU, textStyle, Link, useLayout, useTheme } from '@tecommons/ui'
+import { Box, Button, GU, textStyle, Link, useLayout, useTheme } from '@tecommons/ui'
 
 import { formatTokenAmount, formatDecimals } from '../lib/token-utils'
-import tokenIconSvg from '../assets/tec-token.svg'
+import tokenIconSvg from '../assets/tec-ellipse-logo.svg'
 import { useBondingCurvePrice } from '../hooks/useBondingCurvePrice'
 
 const Metrics = React.memo(function Metrics({
@@ -19,6 +19,7 @@ const Metrics = React.memo(function Metrics({
   return (
     <Box
       heading={stakeToken.name}
+      headingColor={'#262626'}
       css={`
         margin-bottom: ${2 * GU}px;
       `}
@@ -47,7 +48,7 @@ const Metrics = React.memo(function Metrics({
               cursor: pointer;
             `}
           />
-          {compactMode && <TokenPrice token={stakeToken} />}
+          {compactMode && <TokenPrice token={stakeToken} />} 
         </div>
         {!compactMode && <TokenPrice token={stakeToken} />}
         <div>
@@ -82,7 +83,7 @@ function Metric({ label, value, color }) {
     <>
       <p
         css={`
-          color: ${theme.contentSecondary};
+          color: ${theme.content};
           margin-bottom: ${1 * GU}px;
         `}
       >
@@ -108,7 +109,7 @@ function TokenBalance({ label, token, value }) {
 
   return (
     <>
-      <Metric label={label} value={`${formatTokenAmount(value, token.decimals)} ${token.symbol}`} />
+      <Metric label={label} value={`${formatTokenAmount(value, token.decimals)} `} />
       <div
         css={`
           color: ${theme.blue};
@@ -123,24 +124,27 @@ function TokenBalance({ label, token, value }) {
 function TokenPrice({ token }) {
   const price = useBondingCurvePrice(1e8, false)/1e8
   const theme = useTheme()
+  const handleFormSubmit = () => {
+    window.open('https://convert.tecommons.org')
+  }
   return (
     <div>
       <Metric
         label={`${token.symbol} Price`}
         value={`$${formatDecimals(price, 8)}`}
-        color={theme.blue}
+        color={theme.content}
       />
-      <Link
-        href={`https://convert.tecommons.org`}
-        external
+      <Button
+        wide
+        mode="normal"
+        type="submit"
+        onClick={handleFormSubmit}
         css={`
-          ${textStyle('body3')};
-          text-decoration: none;
-          display: flex;
+          margin-top: ${3 * GU}px;
         `}
       >
-        Convert
-      </Link>
+        Trade
+      </Button>
     </div>
   )
 }

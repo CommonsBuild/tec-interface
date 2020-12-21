@@ -1481,9 +1481,10 @@
     penpal "3.0.7"
     pocket-js-core "0.0.3"
 
-"@tecommons/ui@https://github.com/TECommons/tec-ui.git#re-style-library":
-  version "1.0.0"
-  resolved "https://github.com/TECommons/tec-ui.git#79407fa36eea796dff78d0c85039cd5bab9c3d79"
+"@tecommons/ui@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@tecommons/ui/-/ui-1.0.5.tgz#8651e3dc5f04542490c0718852d197e6bb06631a"
+  integrity sha512-k/Iy0TP0YpLyFYexaBXHFX5QkP7/vZqedvVV0sNPEAvCVSp21nBts12uKizTTmCH+O93MAGZXg9w1TSv9qqCFg==
   dependencies:
     "@babel/runtime" "^7.3.1"
     airbnb-prop-types "^2.9.0"
