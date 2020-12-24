@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Link as AragonLink, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, Link as AragonLink, textStyle, useTheme } from '@tecommons/ui'
 import styled from 'styled-components'
 
 import connect from '../base/connect'

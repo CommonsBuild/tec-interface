@@ -6,7 +6,7 @@ import {
   IconConnect,
   springs,
   shortenAddress,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { Transition, animated } from 'react-spring/renderprops'
 
 import ScreenError from './ScreenError'
@@ -174,6 +174,9 @@ function AccountModule({ compact }) {
           onClick={toggle}
           display={compact ? 'icon' : 'all'}
           disabled={isLoading}
+          css={`
+            right: 56px;
+          `}
         />
       )}
 

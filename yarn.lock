@@ -1481,6 +1481,31 @@
     penpal "3.0.7"
     pocket-js-core "0.0.3"
 
+"@tecommons/ui@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@tecommons/ui/-/ui-1.0.5.tgz#8651e3dc5f04542490c0718852d197e6bb06631a"
+  integrity sha512-k/Iy0TP0YpLyFYexaBXHFX5QkP7/vZqedvVV0sNPEAvCVSp21nBts12uKizTTmCH+O93MAGZXg9w1TSv9qqCFg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    airbnb-prop-types "^2.9.0"
+    arg "^2.0.0"
+    command-exists "^1.2.6"
+    dayjs "^1.8.14"
+    js-sha3 "^0.8.0"
+    jsbi "^3.1.2"
+    lodash "^4.17.19"
+    markdown-to-jsx "^6.11.0"
+    popper.js "^1.14.4"
+    prop-types "^15.6.0"
+    react-blockies "^1.4.0"
+    react-display-name "^0.2.3"
+    react-onclickout "^2.0.8"
+    react-spring "^7.2.11"
+    recursive-copy "^2.0.9"
+    token-amount "^0.1.0"
+    use-inside "^0.2.0"
+    use-token "^0.2.0"
+
 "@toruslabs/eccrypto@^1.1.4":
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/@toruslabs/eccrypto/-/eccrypto-1.1.5.tgz#c4b9319e02e913fecd90f3f2b98ae2699e7d498e"
@@ -10156,6 +10181,13 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
+token-amount@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/token-amount/-/token-amount-0.1.0.tgz#1b25775346a7de4df47a988ecf022ffe2d4b6f76"
+  integrity sha512-3p2HE8ef1PKB6Rl6tMmQW289esS5PWsPq/mG8JyyQUFe/1I3LtDBmSGYzzqW/99uvvoQNpUURI1fX8uZE6LSow==
+  dependencies:
+    jsbi "^3.1.1"
+
 tough-cookie@^2.3.3, tough-cookie@^2.5.0, tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
@@ -10402,6 +10434,13 @@ use-inside@^0.2.0:
   integrity sha512-GYJSslg+NyAeASSwWk1wyc6/Bek/ACIrmuFY/bPbgUjQAVrtVvzjSNiOxNh20e7zanJz/bPxtIQIxq7EzjSPqQ==
   dependencies:
     prop-types "^15.7.2"
+
+use-token@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-token/-/use-token-0.2.0.tgz#5690aec9fcc327cf843eb8ff01cd1f75f7d93a25"
+  integrity sha512-lvKboDH7okV/SAb9q4Fs+kgEOS976SvHPMzpy+KCKXXVAMzG30znfsvYKiiK2Mdg+QU4vil0+NHXZ6ozuo+ysw==
+  dependencies:
+    js-sha3 "^0.8.0"
 
 use-wallet@^0.5.0:
   version "0.5.0"

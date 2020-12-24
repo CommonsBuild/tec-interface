@@ -7,7 +7,7 @@ import {
   shortenAddress,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 import { useWallet } from 'use-wallet'
 import HeaderModule from '../Header/HeaderModule'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, useViewport } from '@1hive/1hive-ui'
+import { GU, useViewport } from '@tecommons/ui'
 
 import ConvictionBanner from './ConvictionBanner'
 import Footer from './Footer'

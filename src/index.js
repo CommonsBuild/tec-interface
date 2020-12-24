@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { HashRouter } from 'react-router-dom'
-import { Main } from '@1hive/1hive-ui'
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter } from "react-router-dom";
+import { Main } from "@tecommons/ui";
 
-import App from './App'
-import customTheme from './base/theme'
-import MainView from './components/MainView'
-import { WalletProvider } from './providers/Wallet'
-import { AppStateProvider } from './providers/AppState'
+import App from "./App";
+import customTheme from "./base/theme";
+import MainView from "./components/MainView";
+import { WalletProvider } from "./providers/Wallet";
+import { AppStateProvider } from "./providers/AppState";
 
 ReactDOM.render(
   <WalletProvider>
@@ -15,9 +15,9 @@ ReactDOM.render(
       <Main
         assetsUrl="/aragon-ui/"
         theme={{
-          _name: 'themeDarkCustom',
-          _appearance: 'dark',
-          ...customTheme,
+          _name: "themeDarkCustom",
+          _appearance: "dark",
+          ...customTheme
         }}
         layout={false}
       >
@@ -29,5 +29,5 @@ ReactDOM.render(
       </Main>
     </AppStateProvider>
   </WalletProvider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

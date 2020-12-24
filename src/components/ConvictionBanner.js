@@ -8,7 +8,7 @@ import {
   GU,
   RADIUS,
   useViewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 const BANNER_HEIGHT = 48
 const MOBILE_BANNER_HEIGHT = 64
 

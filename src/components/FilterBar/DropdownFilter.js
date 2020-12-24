@@ -9,7 +9,7 @@ import {
   Tag,
   useTheme,
   useLayout,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 const DropwdownFilter = React.memo(
   ({
