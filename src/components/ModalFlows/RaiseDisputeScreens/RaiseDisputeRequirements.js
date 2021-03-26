@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
-import { Button, GU, Info, Link, textStyle, useTheme } from '@1hive/1hive-ui'
+import { Button, GU, Info, Link, textStyle, useTheme } from '@tecommons/ui'
 import InfoField from '../../../components/InfoField'
 import ModalButton from '../ModalButton'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'

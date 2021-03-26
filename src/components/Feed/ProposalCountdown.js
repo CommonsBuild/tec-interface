@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Tag, Timer } from '@1hive/1hive-ui'
+import { GU, Tag, Timer } from '@tecommons/ui'
 import {
   PROPOSAL_STATUS_CHALLENGED_STRING,
   PROPOSAL_STATUS_DISPUTED_STRING,

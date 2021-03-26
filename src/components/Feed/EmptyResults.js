@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, GU, textStyle, useTheme, useLayout } from '@1hive/1hive-ui'
+import { Box, GU, textStyle, useTheme, useLayout } from '@tecommons/ui'
 import beeIconSvg from '../../assets/bee.svg'
 
 export default function EmptyResults({ title, paragraph }) {

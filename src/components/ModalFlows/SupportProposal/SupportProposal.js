@@ -8,7 +8,7 @@ import {
   Info,
   TextInput,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import useAccountTotalStaked from '../../../hooks/useAccountTotalStaked'
 import { useAppState } from '../../../providers/AppState'
 import { useWallet } from '../../../providers/Wallet'

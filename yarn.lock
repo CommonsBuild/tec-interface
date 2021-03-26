@@ -102,29 +102,6 @@
     did-resolver "^1.1.0"
     ipfs-did-document "^1.2.3"
 
-"@1hive/1hive-ui@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@1hive/1hive-ui/-/1hive-ui-1.0.6.tgz#47893c42584c1b28f7e69d7b22de3d60a80749da"
-  integrity sha512-MSeVJeyhQ4gJi7yktcf2dV4fVLODM6EspXxcBw4aln9+CW7isUsoKtjcb/OlyoAjoummv1DxsQggxkCkOaeeeA==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-    airbnb-prop-types "^2.9.0"
-    arg "^2.0.0"
-    command-exists "^1.2.6"
-    dayjs "^1.8.14"
-    js-sha3 "^0.8.0"
-    jsbi "^3.1.2"
-    lodash "^4.17.15"
-    markdown-to-jsx "^6.11.0"
-    popper.js "^1.14.4"
-    prop-types "^15.6.0"
-    react-blockies "^1.4.0"
-    react-display-name "^0.2.3"
-    react-onclickout "^2.0.8"
-    react-spring "^7.2.11"
-    recursive-copy "^2.0.9"
-    use-inside "^0.2.0"
-
 "@1hive/connect-disputable-honey-pot@^0.1.10":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@1hive/connect-disputable-honey-pot/-/connect-disputable-honey-pot-0.1.10.tgz#7cb85acf906eebc18101c96389e1ebba8bb3706f"
@@ -2643,6 +2620,31 @@
   integrity sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@tecommons/ui@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@tecommons/ui/-/ui-1.0.8.tgz#d92c42415f3ff7ef5c20823cd43ab53d96665356"
+  integrity sha512-RNA+8YJ1CKomrj6RnRhQCGPv2jQIEqMPetaHYFWhf/nE4vdVzdSG7AnRZmTjyXScaoM5W1gvAk+ktEqoMkwFpQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    airbnb-prop-types "^2.9.0"
+    arg "^2.0.0"
+    command-exists "^1.2.6"
+    dayjs "^1.8.14"
+    js-sha3 "^0.8.0"
+    jsbi "^3.1.2"
+    lodash "^4.17.19"
+    markdown-to-jsx "^6.11.0"
+    popper.js "^1.14.4"
+    prop-types "^15.6.0"
+    react-blockies "^1.4.0"
+    react-display-name "^0.2.3"
+    react-onclickout "^2.0.8"
+    react-spring "^7.2.11"
+    recursive-copy "^2.0.9"
+    token-amount "^0.1.0"
+    use-inside "^0.2.0"
+    use-token "^0.2.0"
 
 "@tokenizer/token@^0.1.1":
   version "0.1.1"
@@ -18589,6 +18591,13 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
+token-amount@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/token-amount/-/token-amount-0.1.0.tgz#1b25775346a7de4df47a988ecf022ffe2d4b6f76"
+  integrity sha512-3p2HE8ef1PKB6Rl6tMmQW289esS5PWsPq/mG8JyyQUFe/1I3LtDBmSGYzzqW/99uvvoQNpUURI1fX8uZE6LSow==
+  dependencies:
+    jsbi "^3.1.1"
+
 token-types@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/token-types/-/token-types-2.1.1.tgz#bd585d64902aaf720b8979d257b4b850b4d45c45"
@@ -18981,6 +18990,13 @@ use-inside@^0.2.0:
   integrity sha512-GYJSslg+NyAeASSwWk1wyc6/Bek/ACIrmuFY/bPbgUjQAVrtVvzjSNiOxNh20e7zanJz/bPxtIQIxq7EzjSPqQ==
   dependencies:
     prop-types "^15.7.2"
+
+use-token@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-token/-/use-token-0.2.0.tgz#5690aec9fcc327cf843eb8ff01cd1f75f7d93a25"
+  integrity sha512-lvKboDH7okV/SAb9q4Fs+kgEOS976SvHPMzpy+KCKXXVAMzG30znfsvYKiiK2Mdg+QU4vil0+NHXZ6ozuo+ysw==
+  dependencies:
+    js-sha3 "^0.8.0"
 
 use-wallet@^0.5.0:
   version "0.5.0"

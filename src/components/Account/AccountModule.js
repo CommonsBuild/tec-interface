@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useWallet } from 'use-wallet'
-import { Button, GU, IconConnect, springs } from '@1hive/1hive-ui'
+import { Button, GU, IconConnect, springs } from '@tecommons/ui'
 import { Transition, animated } from 'react-spring/renderprops'
 
 import ScreenError from './ScreenError'

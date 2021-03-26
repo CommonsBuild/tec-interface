@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { GU, useLayout, useViewport } from '@1hive/1hive-ui'
+import { GU, useLayout, useViewport } from '@tecommons/ui'
 
 import Filters from '../components/Filters/Filters'
 import HeroBanner from '../components/Feed/HeroBanner'

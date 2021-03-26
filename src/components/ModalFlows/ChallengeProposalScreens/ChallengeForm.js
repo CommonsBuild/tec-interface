@@ -6,7 +6,7 @@ import {
   textStyle,
   useTheme,
   GU,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import InfoField from '../../InfoField'
 import ModalButton from '../ModalButton'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'

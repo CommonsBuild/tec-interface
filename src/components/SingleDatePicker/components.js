@@ -7,7 +7,7 @@ import {
   IconRight,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 export const HoverIndicator = styled.span`
   width: 100%;

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { Transition, animated } from 'react-spring/renderprops'
 import { css, keyframes } from 'styled-components'
-import { GU, textStyle, IconCross, IconCheck, useTheme } from '@1hive/1hive-ui'
+import { GU, textStyle, IconCross, IconCheck, useTheme } from '@tecommons/ui'
 import Illustration from './Illustration'
 import {
   STEP_ERROR,

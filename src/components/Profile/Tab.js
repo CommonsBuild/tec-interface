@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { ButtonBase, GU, textStyle, useTheme } from '@1hive/1hive-ui'
+import { ButtonBase, GU, textStyle, useTheme } from '@tecommons/ui'
 
 function Tab({ index, item, onChange, selected }) {
   const theme = useTheme()

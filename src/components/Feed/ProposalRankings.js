@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { GU, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, textStyle, useTheme } from '@tecommons/ui'
 
 import iconTopSvg from '../../assets/rankings/ranking-top.svg'
 import iconTopSelectedSvg from '../../assets/rankings/ranking-top-selected.svg'

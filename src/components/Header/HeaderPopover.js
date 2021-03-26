@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GU, Popover, springs } from '@1hive/1hive-ui'
+import { GU, Popover, springs } from '@tecommons/ui'
 import { animated, Spring } from 'react-spring/renderprops'
 
 const AnimatedSection = animated.section

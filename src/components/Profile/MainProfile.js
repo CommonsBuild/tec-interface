@@ -7,7 +7,7 @@ import {
   shortenAddress,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 const IMAGE_DIMENSION = 20 * GU
 const BOX_PADDING = 5 * GU

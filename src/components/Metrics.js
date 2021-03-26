@@ -6,7 +6,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 import { useAppState } from '../providers/AppState'
 import { useCurrencies } from '../hooks/useCurrencies'

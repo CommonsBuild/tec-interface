@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, useTheme } from '@1hive/1hive-ui'
+import { GU, useTheme } from '@tecommons/ui'
 import { ProposalTypes } from '../types'
 
 function ProposalIcon({ type }) {

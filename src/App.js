@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
-import { Main } from '@1hive/1hive-ui'
+import { Main } from '@tecommons/ui'
 import MainView from './components/MainView'
 import Routes from './Routes'
 

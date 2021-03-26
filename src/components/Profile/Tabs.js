@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GU } from '@1hive/1hive-ui'
+import { GU } from '@tecommons/ui'
 import Tab from './Tab'
 
 function Tabs({ items, selected, onChange }) {

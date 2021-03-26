@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'styled-components'
-import { useTheme, textStyle, GU } from '@1hive/1hive-ui'
+import { useTheme, textStyle, GU } from '@tecommons/ui'
 import { HoverIndicator } from './components'
 
 function MonthDay({ children, disabled, selected, today, weekDay, ...props }) {

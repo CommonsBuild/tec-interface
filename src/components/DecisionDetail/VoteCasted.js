@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, IconCheck, RADIUS, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, IconCheck, RADIUS, textStyle, useTheme } from '@tecommons/ui'
 import { useAppState } from '../../providers/AppState'
 import { formatTokenAmount } from '../../utils/token-utils'
 import { getAccountCastStake } from '../../utils/vote-utils'

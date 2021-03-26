@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { IdentityBadge as Badge } from '@1hive/1hive-ui'
+import { IdentityBadge as Badge } from '@tecommons/ui'
 
 import { getNetworkType } from '../utils/web3-utils'
 import { getProfileForAccount } from '../lib/profile'

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { keyframes } from 'styled-components'
-import { useTheme, GU } from '@1hive/1hive-ui'
+import { useTheme, GU } from '@tecommons/ui'
 import LoadingRing from '../LoadingRing'
 import MultiModalScreens from '../MultiModal/MultiModalScreens'
 import Stepper from '../Stepper/Stepper'

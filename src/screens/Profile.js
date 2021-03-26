@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { Button, GU, Split, springs, useLayout } from '@1hive/1hive-ui'
+import { Button, GU, Split, springs, useLayout } from '@tecommons/ui'
 import { animated, Spring } from 'react-spring/renderprops'
 
 import Activity from '../components/Profile/Activity'

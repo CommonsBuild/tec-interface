@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, useViewport } from '@1hive/1hive-ui'
+import { Layout, useViewport } from '@tecommons/ui'
 import { BREAKPOINTS } from '../styles/breakpoints'
 
 function CustomLayout({ children, paddingBottom = 0 }) {

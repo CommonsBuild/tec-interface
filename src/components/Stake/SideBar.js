@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, textStyle, useTheme } from '@tecommons/ui'
 import { useUniswapHnyPrice } from '../../hooks/useUniswapHNYPrice'
 import BalanceCard from './BalanceCard'
 import ExpandableCard from './ExpandableCard'

@@ -10,7 +10,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 import ActionCollateral from '../components/ActionCollateral'
 import ChallengeProposalScreens from '../components/ModalFlows/ChallengeProposalScreens/ChallengeProposalScreens'

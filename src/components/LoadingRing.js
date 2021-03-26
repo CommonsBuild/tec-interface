@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, LoadingRing as LoadingRingComponent } from '@1hive/1hive-ui'
+import { GU, LoadingRing as LoadingRingComponent } from '@tecommons/ui'
 
 export default function LoadingRing() {
   return (

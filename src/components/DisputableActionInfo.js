@@ -10,7 +10,7 @@ import {
   textStyle,
   Timer,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { ConvictionCountdown } from './ConvictionVisuals'
 
 import { useWallet } from '../providers/Wallet'

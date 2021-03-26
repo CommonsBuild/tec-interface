@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react'
-import { Header } from '@1hive/1hive-ui'
+import { Header } from '@tecommons/ui'
 import EmptyState from './EmptyState'
 import LayoutColumns from '../Layout/LayoutColumns'
 import LayoutGutter from '../Layout/LayoutGutter'

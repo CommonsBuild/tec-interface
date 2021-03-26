@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-import { ButtonBase, GU, textStyle, useTheme } from '@1hive/1hive-ui'
+import { ButtonBase, GU, textStyle, useTheme } from '@tecommons/ui'
 import { ThumbsDownIcon, ThumbsUpIcon } from '../Icons'
 
 import useAccountTokens from '../../hooks/useAccountTokens'

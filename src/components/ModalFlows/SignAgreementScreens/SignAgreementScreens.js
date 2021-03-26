@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router'
-import { Button } from '@1hive/1hive-ui'
+import { Button } from '@tecommons/ui'
 import ModalFlowBase from '../ModalFlowBase'
 import SignOverview from './SignOverview'
 import useActions from '../../../hooks/useActions'

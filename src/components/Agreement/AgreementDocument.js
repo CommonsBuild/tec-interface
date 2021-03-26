@@ -7,7 +7,7 @@ import {
   useTheme,
   useLayout,
   GU,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import ModalButton from '../ModalFlows/ModalButton'
 import { useMounted } from '../../hooks/useMounted'
 import { useWallet } from '../../providers/Wallet'

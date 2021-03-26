@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, GU } from '@1hive/1hive-ui'
+import { Field, GU } from '@tecommons/ui'
 
 function InfoField({ label, children, ...props }) {
   return (

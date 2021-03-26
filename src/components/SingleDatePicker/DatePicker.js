@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { eachDayOfInterval, GU } from '@1hive/1hive-ui'
+import { eachDayOfInterval, GU } from '@tecommons/ui'
 import MonthDay from './MonthDay'
 import { Selector } from './components'
 import { dayjs } from '../../utils/date-utils'

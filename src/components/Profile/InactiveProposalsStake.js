@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Box, GU, textStyle, useTheme, useViewport } from '@1hive/1hive-ui'
+import { Box, GU, textStyle, useTheme, useViewport } from '@tecommons/ui'
 import { useAppState } from '../../providers/AppState'
 
 import { formatTokenAmount } from '../../utils/token-utils'

@@ -10,7 +10,7 @@ import {
   RADIUS,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { useAppState } from '../../providers/AppState'
 import useExtendedVoteData from '../../hooks/useExtendedVoteData'
 import { useWallet } from '../../providers/Wallet'

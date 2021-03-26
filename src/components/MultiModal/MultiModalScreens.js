@@ -12,7 +12,7 @@ import {
   useLayout,
   useTheme,
   Viewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { MultiModalProvider, useMultiModal } from './MultiModalProvider'
 import { springs } from '../../style/springs'
 import { useDisableAnimation } from '../../hooks/useDisableAnimation'

@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { GU, Header, Info } from '@1hive/1hive-ui'
+import { GU, Header, Info } from '@tecommons/ui'
 import AgreementBindingActions from './AgreementBindingActions'
 import AgreementDetails from './AgreementDetails'
 import AgreementDocument from './AgreementDocument'

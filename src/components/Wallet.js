@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, GU, LoadingRing, textStyle, useTheme } from '@1hive/1hive-ui'
+import { Box, GU, LoadingRing, textStyle, useTheme } from '@tecommons/ui'
 import useAccountTokens from '../hooks/useAccountTokens'
 import { useAppState } from '../providers/AppState'
 import { useTokenBalances } from '../hooks/useOrgHooks'

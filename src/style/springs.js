@@ -1,4 +1,4 @@
-import { springs as baseSprings } from '@1hive/1hive-ui'
+import { springs as baseSprings } from '@tecommons/ui'
 
 export const springs = {
   ...baseSprings,

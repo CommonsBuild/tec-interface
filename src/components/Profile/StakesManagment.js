@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@1hive/1hive-ui'
+import { Box } from '@tecommons/ui'
 
 function StakeManagment() {
   return <Box>Manage stakes!</Box>

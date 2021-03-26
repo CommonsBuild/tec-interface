@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, GU, IconPlus, textStyle, useLayout } from '@1hive/1hive-ui'
+import { Button, GU, IconPlus, textStyle, useLayout } from '@tecommons/ui'
 import { useWallet } from '../../providers/Wallet'
 
 import desktopBanner from '../../assets/banner.png'

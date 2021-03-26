@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
-import { Button, GU, Info } from '@1hive/1hive-ui'
+import { Button, GU, Info } from '@tecommons/ui'
 
 import { useAppState } from '../../providers/AppState'
 import { useWallet } from '../../providers/Wallet'

@@ -8,7 +8,7 @@ import {
   useLayout,
   useTheme,
   useViewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import LoadingRing from '../LoadingRing'
 import { BRIGHT_ID_APP_DEEPLINK } from '../../endpoints'
 import { sponsorUser } from '../../services/sponsorUser'

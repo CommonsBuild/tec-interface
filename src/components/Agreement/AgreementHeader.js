@@ -6,7 +6,7 @@ import {
   useLayout,
   useTheme,
   GU,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import icon from './assets/icon.svg'
 
 function AgreementHeader({ title }) {

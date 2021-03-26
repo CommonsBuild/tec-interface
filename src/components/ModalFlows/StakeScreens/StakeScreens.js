@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Button } from '@1hive/1hive-ui'
+import { Button } from '@tecommons/ui'
 import ModalFlowBase from '../ModalFlowBase'
 import StakeAndWithdraw from './StakeAndWithdraw'
 import { useAppState } from '../../../providers/AppState'

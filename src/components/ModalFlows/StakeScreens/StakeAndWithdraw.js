@@ -7,7 +7,7 @@ import {
   TextInput,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import BigNumber from '../../../lib/bigNumber'
 import { toDecimals } from '../../../utils/math-utils'
 import { formatTokenAmount } from '../../../utils/token-utils'

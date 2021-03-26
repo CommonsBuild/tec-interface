@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, LoadingRing, textStyle } from '@1hive/1hive-ui'
+import { GU, LoadingRing, textStyle } from '@tecommons/ui'
 import Description from '../Description'
 
 import { useDescribeVote } from '../../hooks/useDescribeVote'

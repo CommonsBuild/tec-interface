@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { noop } from '@1hive/1hive-ui'
+import { noop } from '@tecommons/ui'
 import { toHex } from 'web3-utils'
 
 import { useAppState } from '../providers/AppState'

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Box, GU, Link, textStyle, useTheme } from '@1hive/1hive-ui'
+import { Box, GU, Link, textStyle, useTheme } from '@tecommons/ui'
 
 import ProposalIcon from '../ProposalIcon'
 import { useAppState } from '../../providers/AppState'

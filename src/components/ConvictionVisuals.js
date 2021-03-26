@@ -9,7 +9,7 @@ import {
   Timer,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import styled from 'styled-components'
 import LineChart from './ModifiedLineChart'
 import SummaryBar from './SummaryBar'

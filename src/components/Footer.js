@@ -7,7 +7,7 @@ import {
   useLayout,
   useTheme,
   useViewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import styled from 'styled-components'
 import Layout from './Layout'
 import MultiModal from '../components/MultiModal/MultiModal'

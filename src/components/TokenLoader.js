@@ -1,6 +1,6 @@
 import React from 'react'
 import { keyframes, css } from 'styled-components'
-import { GU } from '@1hive/1hive-ui'
+import { GU } from '@tecommons/ui'
 import honeySvg from '../assets/IconHNYLoader.svg'
 
 const spinAnimation = css`

@@ -8,7 +8,7 @@ import {
   useTheme,
   GU,
   RADIUS,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { dateFormat } from '../../utils/date-utils'
 import InfoField from '../InfoField'
 import { getIpfsCidFromUri, getIpfsUrlFromUri } from '../../utils/ipfs-utils'

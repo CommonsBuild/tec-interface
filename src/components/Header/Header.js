@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Link, useTheme, useViewport } from '@1hive/1hive-ui'
+import { GU, Link, useTheme, useViewport } from '@tecommons/ui'
 import AccountModule from '../Account/AccountModule'
 import BalanceModule from '../BalanceModule'
 import Layout from '../Layout'

@@ -7,7 +7,7 @@ import {
   Tag,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import IdentityBadge from '../IdentityBadge'
 import BrightIdModal from './BrightIdModal'
 

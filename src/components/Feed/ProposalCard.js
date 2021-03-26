@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
-import { GU, useTheme, useViewport } from '@1hive/1hive-ui'
+import { GU, useTheme, useViewport } from '@tecommons/ui'
 
 import ProposalFooter from './ProposalFooter'
 import ProposalHeader from './ProposalHeader'

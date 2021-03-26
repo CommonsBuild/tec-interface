@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Accordion, AppBadge, Box, useTheme, GU } from '@1hive/1hive-ui'
+import { Accordion, AppBadge, Box, useTheme, GU } from '@tecommons/ui'
 import HelpTip from '../HelpTip'
 import InfoField from './../InfoField'
 import { formatTokenAmount } from '../../utils/token-utils'

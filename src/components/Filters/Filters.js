@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, DropDown, GU, textStyle, useTheme } from '@1hive/1hive-ui'
+import { Button, DropDown, GU, textStyle, useTheme } from '@tecommons/ui'
 import CompactFilter from './CompactFilter'
 import ListFilter from './ListFilter'
 import TextFilter from './TextFilter'

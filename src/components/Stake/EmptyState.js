@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, GU, Header, textStyle } from '@1hive/1hive-ui'
+import { Card, GU, Header, textStyle } from '@tecommons/ui'
 import tokenIcon from './assets/connect-icon.svg'
 import LayoutColumns from '../Layout/LayoutColumns'
 

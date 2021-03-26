@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button, Field, GU, textStyle, theme, useLayout } from '@1hive/1hive-ui'
+import { Button, Field, GU, textStyle, theme, useLayout } from '@tecommons/ui'
 import iconFees from '../../../assets/iconFees.svg'
 import { getDisputableAppByName } from '../../../utils/app-utils'
 import { formatTokenAmount } from '../../../utils/token-utils'

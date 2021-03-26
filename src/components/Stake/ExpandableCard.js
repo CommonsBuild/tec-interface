@@ -8,7 +8,7 @@ import {
   RADIUS,
   springs,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { Spring, Transition, animated } from 'react-spring/renderprops'
 
 const AnimatedDiv = animated.div

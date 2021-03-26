@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useReducer, useState } from 'react'
 import { PropTypes } from 'prop-types'
 import { Transition, animated } from 'react-spring/renderprops'
-import { GU, noop, springs, useTheme } from '@1hive/1hive-ui'
+import { GU, noop, springs, useTheme } from '@tecommons/ui'
 import Step from './Step/Step'
 import {
   STEP_ERROR,

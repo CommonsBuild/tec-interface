@@ -11,7 +11,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 // Components
 import ActionCollateral from '../components/ActionCollateral'

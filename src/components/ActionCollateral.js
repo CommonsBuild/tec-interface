@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU } from '@1hive/1hive-ui'
+import { GU } from '@tecommons/ui'
 
 import { formatTokenAmount } from '../utils/token-utils'
 import honeyIconSvg from '../assets/honey.svg'

@@ -7,7 +7,7 @@ import {
   RADIUS,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 
 import { SINGLE_DATE, INPUT_BORDER } from './consts'
 

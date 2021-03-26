@@ -9,7 +9,7 @@ import {
   RADIUS,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import IdentityBadge from '../IdentityBadge'
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard'
 import { getNetworkName } from '../../utils/web3-utils'

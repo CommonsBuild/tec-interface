@@ -13,7 +13,7 @@ import {
   textStyle,
   useLayout,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import BrightIdStatus from './BrightIdStatus'
 import SingleDatePicker from '../SingleDatePicker/SingleDatePicker'
 

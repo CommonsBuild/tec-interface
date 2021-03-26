@@ -7,7 +7,7 @@ import {
   RADIUS,
   textStyle,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { getProviderFromUseWalletId } from '../../ethereum-providers'
 import { getUseWalletProviders } from '../../utils/web3-utils'
 

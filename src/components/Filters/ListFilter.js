@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { GU, useTheme } from '@1hive/1hive-ui'
+import { GU, useTheme } from '@tecommons/ui'
 
 function ListFilter({ items, selected, onChange }) {
   return (

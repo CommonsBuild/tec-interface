@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { noop } from '@1hive/1hive-ui'
+import { noop } from '@tecommons/ui'
 import { Inside } from 'use-inside'
 
 function MultiModal({ visible, onClose, onClosed, children }) {

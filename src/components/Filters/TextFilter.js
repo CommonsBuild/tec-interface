@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GU, SearchInput, textStyle } from '@1hive/1hive-ui'
+import { GU, SearchInput, textStyle } from '@tecommons/ui'
 
 const TextFilter = React.memo(({ text, onChange, placeholder = '' }) => {
   return (

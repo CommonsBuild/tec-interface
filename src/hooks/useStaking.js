@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { noop } from '@1hive/1hive-ui'
+import { noop } from '@tecommons/ui'
 import { useMounted } from './useMounted'
 import { useWallet } from '../providers/Wallet'
 

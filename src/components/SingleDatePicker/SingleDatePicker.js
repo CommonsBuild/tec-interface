@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Popover, GU, RADIUS, useTheme } from '@1hive/1hive-ui'
+import { Popover, GU, RADIUS, useTheme } from '@tecommons/ui'
 import DatePicker from './DatePicker'
 import Labels from './Labels'
 import { SINGLE_DATE } from './consts'

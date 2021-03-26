@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Root, ScrollView, useViewport } from '@1hive/1hive-ui'
+import { GU, Root, ScrollView, useViewport } from '@tecommons/ui'
 
 import Footer from './Footer'
 import Header from './Header/Header'

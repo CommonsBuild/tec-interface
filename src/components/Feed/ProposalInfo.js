@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Help, LoadingRing, useTheme } from '@1hive/1hive-ui'
+import { GU, Help, LoadingRing, useTheme } from '@tecommons/ui'
 import Balance from '../Balance'
 import ProposalCountdown from './ProposalCountdown'
 import ProposalDescription from './ProposalDescription'

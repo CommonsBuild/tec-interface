@@ -7,7 +7,7 @@ import {
   useTheme,
   // RADIUS,
   GU,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import Divider from './Divider'
 import { getNetwork } from '../../../networks'
 import {

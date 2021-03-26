@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, LoadingRing, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, LoadingRing, textStyle, useTheme } from '@tecommons/ui'
 
 import { useDisputeFees } from '../hooks/useDispute'
 

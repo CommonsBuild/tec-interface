@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, Tag, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, Tag, textStyle, useTheme } from '@tecommons/ui'
 
 import { ConvictionBar } from '../ConvictionVisuals'
 import SummaryBar from '../DecisionDetail/SummaryBar' // TODO: Move to root component folder

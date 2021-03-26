@@ -12,7 +12,7 @@ import {
   Tag,
   useTheme,
   DataView,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import {
   STAKING_SCHEDULED,
   STAKING_CHALLENGED,

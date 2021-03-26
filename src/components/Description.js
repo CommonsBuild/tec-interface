@@ -1,5 +1,5 @@
 import React from 'react'
-import { GU, IdentityBadge, useTheme } from '@1hive/1hive-ui'
+import { GU, IdentityBadge, useTheme } from '@tecommons/ui'
 
 function Description({ disableBadgeInteraction, path, ...props }) {
   return (

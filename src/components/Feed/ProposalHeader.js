@@ -5,7 +5,7 @@ import {
   ContextMenu,
   ContextMenuItem,
   useLayout,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import ProposalCreator from './ProposalCreator'
 
 function ProposalHeader({ proposal, onSelectProposal }) {

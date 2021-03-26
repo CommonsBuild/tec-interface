@@ -12,7 +12,7 @@ import {
   MEDIUM_RADIUS,
   TextInput,
   useTheme,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import { useAppState } from '../../../providers/AppState'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'
 import useRequestAmount from '../../../hooks/useRequestAmount'

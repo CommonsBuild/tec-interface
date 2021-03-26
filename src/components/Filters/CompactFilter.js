@@ -11,7 +11,7 @@ import {
   textStyle,
   useTheme,
   useViewport,
-} from '@1hive/1hive-ui'
+} from '@tecommons/ui'
 import arrowDownSvg from '../../assets/arrowDown.svg'
 
 function CompactFilter({ ...props }) {

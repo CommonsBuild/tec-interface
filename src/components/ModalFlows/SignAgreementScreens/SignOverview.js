@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { GU, Checkbox, Field, useLayout } from '@1hive/1hive-ui'
+import { GU, Checkbox, Field, useLayout } from '@tecommons/ui'
 import ModalButton from '../ModalButton'
 import signGraphic from '../../../assets/smart-contract.svg'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'

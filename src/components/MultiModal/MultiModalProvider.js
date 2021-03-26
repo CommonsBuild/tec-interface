@@ -1,6 +1,6 @@
 import React, { useContext, useMemo, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { noop } from '@1hive/1hive-ui'
+import { noop } from '@tecommons/ui'
 import { useSteps } from '../../hooks/useSteps'
 
 const MultiModalContext = React.createContext({})

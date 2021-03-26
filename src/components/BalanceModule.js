@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
-import { GU, LoadingRing, textStyle, useTheme } from '@1hive/1hive-ui'
+import { GU, LoadingRing, textStyle, useTheme } from '@tecommons/ui'
 
 import HeaderModule from './Header/HeaderModule'
 import useAccountTokens from '../hooks/useAccountTokens'
