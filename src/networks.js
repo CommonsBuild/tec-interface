@@ -1,10 +1,11 @@
-import { getNetworkType, isLocalOrUnknownNetwork } from './lib/web3-utils'
+import { getNetworkType, isLocalOrUnknownNetwork } from './utils/web3-utils'
 import { getDefaultChain } from './local-settings'
 import env from './environment'
 
-const RINKEBY_HONEY_POT = '0xace2faa375ffc251fafc7360bc3defbc6184e5fe'
+const RINKEBY_HONEY_POT = '0x7777cd7c9c6d3537244871ac8e73b3cb9710d45a'
 const RINKEBY_STAGING_HONEY_POT = '0xeac000b64fc11a9ce6d885fe91fb4f9c2359cc21'
 const INSTANCE = env('INSTANCE')
+const ETH_NODE = env('ETH_NODE')
 
 const networks = {
   mainnet: {
@@ -18,8 +19,19 @@ const networks = {
     ensRegistry: '0x98df287b6c145399aaa709692c8d308357bc085d',
     name: 'Rinkeby',
     type: 'rinkeby',
-    defaultEthNode: 'https://rinkeby.eth.aragon.network/',
+    defaultEthNode: ETH_NODE,
     honeypot: getRinkebyHoneyPotAddress(INSTANCE),
+    arbitrator: '0x35e7433141D5f7f2EB7081186f5284dCDD2ccacE',
+    disputeManager: '0xc1f1c30878de30fd3ac3db7eacdd33a70c7110bd',
+    subgraphs: {
+      agreement:
+        'https://api.thegraph.com/subgraphs/name/1hive/agreement-rinkeby',
+      celeste: 'https://api.thegraph.com/subgraphs/name/1hive/celeste-rinkeby',
+    },
+    celesteUrl: 'https://celeste-rinkeby.1hive.org/#',
+    ipfsGateway: 'https://ipfs.io/ipfs',
+    legacyNetworkType: 'rinkeby',
+    explorer: 'etherscan',
   },
   xdai: {
     chainId: 100,
@@ -27,8 +39,17 @@ const networks = {
     name: 'xDai',
     type: 'xdai',
     defaultEthNode: 'https://xdai.poanetwork.dev/',
-    honeypot: '0xd0817aa0f770d024f42f0222dba37536a05118dc',
-    bancorFormula: '0xad4f46fb39B595579BDdDaa916aF88fc9210EE31',
+    honeypot: '0x8ccbeab14b5ac4a431fffc39f4bec4089020a155',
+    arbitrator: '0x44E4fCFed14E1285c9e0F6eae77D5fDd0F196f85',
+    disputeManager: '0xec7904e20b69f60966d6c6b9dc534355614dd922',
+    subgraphs: {
+      agreement: 'https://api.thegraph.com/subgraphs/name/1hive/agreement-xdai',
+      celeste: 'https://api.thegraph.com/subgraphs/name/1hive/celeste',
+    },
+    celesteUrl: 'https://celeste.1hive.org/#',
+    ipfsGateway: 'https://ipfs.io/ipfs',
+    legacyNetworkType: 'main',
+    explorer: 'blockscout',
   },
 }
 
@@ -53,4 +74,13 @@ function getRinkebyHoneyPotAddress(rinkebyInstance) {
     return RINKEBY_STAGING_HONEY_POT
   }
   return RINKEBY_HONEY_POT
+}
+
+const agreementSubgraph = getNetwork().subgraphs?.agreement
+
+export const connectorConfig = {
+  agreement: agreementSubgraph && [
+    'thegraph',
+    { subgraphUrl: agreementSubgraph },
+  ],
 }

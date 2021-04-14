@@ -1,75 +1,59 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
-import connectConviction from '@1hive/connect-conviction-voting'
-import { connect } from '@aragon/connect'
-import { useContractReadOnly } from './useContract'
+import connectHoneypot from '@1hive/connect-disputable-honey-pot'
+import connectAgreement from '@aragon/connect-agreement'
 import {
-  useConfigSubscription,
-  useProposalsSubscription,
-  useStakesHistorySubscription,
-} from './useSubscriptions'
-import { useWallet } from '../providers/Wallet'
+  createAppHook,
+  useApps,
+  useOrganization,
+  usePermissions,
+} from '@1hive/connect-react'
+import { useContractReadOnly } from './useContract'
+import { useConfigSubscription } from './useSubscriptions'
 
 // utils
 import env from '../environment'
-import { getNetwork } from '../networks'
 import BigNumber from '../lib/bigNumber'
-import { addressesEqual } from '../lib/web3-utils'
-import { getDefaultChain } from '../local-settings'
-import { getAppAddressByName } from '../lib/data-utils'
+import { addressesEqual } from '../utils/web3-utils'
+import { getAppAddressByName, getAppByName } from '../utils/data-utils'
+import { connectorConfig } from '../networks'
 
 // abis
 import minimeTokenAbi from '../abi/minimeToken.json'
 import vaultAbi from '../abi/vault-balance.json'
 
-const DEFAULT_APP_DATA = {
-  convictionVoting: null,
-  stakeToken: {},
-  requestToken: {},
-  proposals: [],
-  stakesHistory: [],
-  alpha: BigNumber(0),
-  maxRatio: BigNumber(0),
-  weight: BigNumber(0),
-  errorFetchingApp: false,
-}
+const useAgreementHook = createAppHook(
+  connectAgreement,
+  connectorConfig.agreement
+)
 
-export function useOrganzation() {
-  const [organzation, setOrganization] = useState(null)
-  const [errorFetchingOrg, setErrorFetchingOrg] = useState(false)
-  const { ethereum, ethers } = useWallet()
+export function useOrgData() {
+  const [honeypot, setHoneypot] = useState(null)
+  const [organization, orgStatus] = useOrganization()
+  const [apps, appsStatus] = useApps()
 
-  useEffect(() => {
-    let cancelled = false
+  const agreementApp = getAppByName(apps, env('AGREEMENT_APP_NAME'))
+  const convictionApp = getAppByName(apps, env('CONVICTION_APP_NAME'))
+  const [
+    connectedAgreementApp,
+    { error: agreementError, loading: agreementAppLoading },
+  ] = useAgreementHook(agreementApp)
 
-    const fetchOrg = async () => {
-      const orgAddress = getNetwork().honeypot
-      try {
-        const organization = await connect(orgAddress, 'thegraph', {
-          ethereum: ethereum || ethers,
-          network: getDefaultChain(),
-        })
-        if (!cancelled) {
-          setOrganization(organization)
-        }
-      } catch (error) {
-        setErrorFetchingOrg(true)
-      }
+  const [permissions, permissionsStatus] = usePermissions()
+
+  const convictionAppPermissions = useMemo(() => {
+    if (
+      !permissions ||
+      permissionsStatus.loading ||
+      permissionsStatus.error ||
+      !convictionApp
+    ) {
+      return
     }
-
-    fetchOrg()
-
-    return () => {
-      cancelled = true
-    }
-  }, [ethers, ethereum])
-
-  return [organzation, errorFetchingOrg]
-}
-
-export function useAppData(organization) {
-  const [appData, setAppData] = useState(DEFAULT_APP_DATA)
-  const appName = env('APP_NAME')
+    return permissions.filter(({ appAddress }) =>
+      addressesEqual(appAddress, convictionApp.address)
+    )
+  }, [convictionApp, permissions, permissionsStatus])
 
   useEffect(() => {
     if (!organization) {
@@ -78,61 +62,56 @@ export function useAppData(organization) {
 
     let cancelled = false
 
-    const fetchAppData = async () => {
+    const fetchHoneypotConnector = async () => {
       try {
-        const apps = await organization.apps()
-        const permissions = await organization.permissions()
-
-        const convictionApp = apps.find(app => app.name === appName)
-        if (!convictionApp) {
-          throw new Error('Conviction App not found.')
-        }
-
-        const convictionAppPermissions = permissions.filter(({ appAddress }) =>
-          addressesEqual(appAddress, convictionApp.address)
-        )
-
-        const convictionVoting = await connectConviction(convictionApp)
+        const honeypotConnector = await connectHoneypot(organization)
 
         if (!cancelled) {
-          setAppData(appData => ({
-            ...appData,
-            installedApps: apps,
-            convictionVoting,
-            organization,
-            permissions: convictionAppPermissions,
-          }))
+          setHoneypot(honeypotConnector)
         }
-      } catch (error) {
-        setAppData(appData => ({
-          ...appData,
-          errorFetchingApp: true,
-        }))
+      } catch (err) {
+        console.error(`Error fetching honey pot connector: ${err}`)
       }
     }
 
-    fetchAppData()
+    fetchHoneypotConnector()
 
     return () => {
       cancelled = true
     }
-  }, [appName, organization])
+  }, [organization])
 
-  const config = useConfigSubscription(appData.convictionVoting)
-  const proposals = useProposalsSubscription(appData.convictionVoting)
+  const config = useConfigSubscription(honeypot)
 
-  // TODO: Get requestToken form thegraph
-  const requestToken = {id:'0xe91d153e0b41518a2ce8dd3d7944fa863463a97d', decimals: 18, name: 'Wrapped xDAI', symbol: 'wxDAI'}
+  const loadingData =
+    orgStatus.loading ||
+    appsStatus.loading ||
+    permissionsStatus.loading ||
+    agreementAppLoading ||
+    !config
 
-  // Stakes done across all proposals on this app
-  // Includes old and current stakes
-  const stakesHistory = useStakesHistorySubscription(appData.convictionVoting)
+  const errors =
+    orgStatus.error ||
+    appsStatus.error ||
+    permissionsStatus.error ||
+    agreementError
 
-  return { ...appData, ...config, requestToken, proposals, stakesHistory }
+  return {
+    config,
+    errors,
+    connectedAgreementApp,
+    honeypot,
+    installedApps: apps,
+    organization,
+    permissions: convictionAppPermissions,
+    loadingAppData: loadingData,
+  }
 }
 
-export function useVaultBalance(installedApps, token, last = false, timeout = 1000) {
-  const vaultAddress = getAppAddressByName(installedApps, 'vault', last)
+export function useVaultBalance(installedApps, token, timeout = 1000) {
+  const vaultAddress =
+    getAppAddressByName(installedApps, 'vault') ||
+    getAppAddressByName(installedApps, 'agent')
   const vaultContract = useContractReadOnly(vaultAddress, vaultAbi)
 
   const [vaultBalance, setVaultBalance] = useState(new BigNumber(-1))
@@ -144,7 +123,7 @@ export function useVaultBalance(installedApps, token, last = false, timeout = 10
     let cancelled = false
     let timeoutId
 
-    if (!vaultContract) {
+    if (!vaultContract || !token?.id) {
       return
     }
 
@@ -179,7 +158,7 @@ export function useVaultBalance(installedApps, token, last = false, timeout = 10
       cancelled = true
       clearTimeout(timeoutId)
     }
-  }, [vaultBalance, vaultContract, controlledTimeout, timeout, token.id])
+  }, [vaultBalance, vaultContract, controlledTimeout, timeout, token])
 
   return vaultBalance
 }
@@ -190,10 +169,10 @@ export function useTokenBalances(account, token, timer = 3000) {
     totalSupply: new BigNumber(-1),
   })
 
-  const tokenContract = useContractReadOnly(token.id, minimeTokenAbi)
+  const tokenContract = useContractReadOnly(token?.id, minimeTokenAbi)
 
   useEffect(() => {
-    if (!token.id) {
+    if (!token?.id || !tokenContract) {
       return
     }
 
@@ -232,7 +211,7 @@ export function useTokenBalances(account, token, timer = 3000) {
       cancelled = true
       clearTimeout(timeoutId)
     }
-  }, [account, balances, tokenContract, token.id])
+  }, [account, balances, tokenContract, token])
 
   return balances
 }

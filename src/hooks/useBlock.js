@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import useInterval from './useInterval'
 import { useWallet } from '../providers/Wallet'
@@ -15,7 +15,7 @@ const NETWORK_TIMES = new Map([
 
 export function useLatestBlock(updateEvery = 1000) {
   const { ethers } = useWallet()
-  const [block, setBlock] = useState({ number: 0, timeStamp: 0 })
+  const [block, setBlock] = useState({ number: 0, timestamp: 0 })
 
   const fetchBlock = useCallback(async () => {
     const { number, timestamp } = ethers
@@ -28,6 +28,30 @@ export function useLatestBlock(updateEvery = 1000) {
   useInterval(fetchBlock, updateEvery, true)
 
   return block
+}
+
+export function useBlockTimeStamp(blockNumber) {
+  const { ethers } = useWallet()
+  const [timestamp, setTimestamp] = useState(0)
+
+  useEffect(() => {
+    let cancelled = false
+    const fetchBlock = async () => {
+      const block = await ethers.getBlock(blockNumber)
+
+      if (block && !cancelled) {
+        setTimestamp(block.timestamp * 1000)
+      }
+    }
+
+    fetchBlock()
+
+    return () => {
+      cancelled = true
+    }
+  }, [blockNumber, ethers])
+
+  return timestamp
 }
 
 export function useBlockTime() {

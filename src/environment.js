@@ -1,29 +1,39 @@
-import { getNetwork } from './networks'
-
 // rinkeby
 const DEFAULT_CHAIN_ID = 100
-const DEFAULT_APP_NAME = 'conviction-beta'
+const DEFAULT_CONVICTION_APP_NAME = 'disputable-conviction-voting'
+const DEFAULT_VOTING_APP_NAME = 'disputable-voting'
+const DEFAULT_ISSUANCE_APP_NAME = 'dynamic-issuance'
+const DEFAULT_AGREEMENT_APP_NAME = 'agreement'
 
 const ENV_VARS = {
-  APP_NAME() {
-    return process.env.REACT_APP_APP_NAME || DEFAULT_APP_NAME
+  AGREEMENT_APP_NAME() {
+    return (
+      process.env.REACT_APP_AGREEMENT_APP_NAME || DEFAULT_AGREEMENT_APP_NAME
+    )
   },
-
   CHAIN_ID() {
     const chainId = parseInt(process.env.REACT_APP_CHAIN_ID)
     return isNaN(chainId) ? DEFAULT_CHAIN_ID : chainId
   },
+  CONVICTION_APP_NAME() {
+    return (
+      process.env.REACT_APP_CONVICTION_APP_NAME || DEFAULT_CONVICTION_APP_NAME
+    )
+  },
+  ETH_NODE() {
+    return process.env.REACT_APP_ETH_NODE || ''
+  },
   FORTMATIC_API_KEY() {
     return process.env.REACT_APP_FORTMATIC_API_KEY || ''
   },
-  ORG_ADDRESS() {
-    return process.env.REACT_APP_ORG_ADDRESS || getNetwork().honeypot
-  },
-  PORTIS_DAPP_ID() {
-    return process.env.REACT_APP_PORTIS_DAPP_ID || ''
-  },
   INSTANCE() {
     return process.env.REACT_APP_APP_INSTANCE || ''
+  },
+  ISSUANCE_APP_NAME() {
+    return process.env.REACT_APP_ISSUANCE_APP_NAME || DEFAULT_ISSUANCE_APP_NAME
+  },
+  VOTING_APP_NAME() {
+    return process.env.REACT_APP_VOTING_APP_NAME || DEFAULT_VOTING_APP_NAME
   },
 }
 
