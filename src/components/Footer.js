@@ -44,7 +44,6 @@ function Footer() {
               display: grid;
               grid-template-columns: ${40 * GU}px ${25 * GU}px ${25 * GU}px;
               grid-row-gap: ${2 * GU}px;
-
               & a {
                 color: ${theme.contentSecondary};
               }
@@ -191,7 +190,6 @@ function FooterItem({
       css={`
         padding: ${1 * GU}px ${2 * GU}px;
         border-radius: 0;
-
         ${!disabled &&
           `&:active {
           background: ${theme.surfacePressed};

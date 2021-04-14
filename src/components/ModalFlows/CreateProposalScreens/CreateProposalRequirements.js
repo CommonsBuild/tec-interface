@@ -3,10 +3,12 @@ import { useHistory } from 'react-router-dom'
 import { Button, GU, Info, Link, textStyle, useTheme } from '@tecommons/ui'
 import ModalButton from '../ModalButton'
 import InfoField from '../../../components/InfoField'
-import { dateFormat } from '../../../utils/date-utils'
-import { getDisputableAppByName } from '../../../utils/app-utils'
-import { formatTokenAmount } from '../../../utils/token-utils'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'
+
+import { dateFormat } from '../../../utils/date-utils'
+import env from '../../../environment'
+import { formatTokenAmount } from '../../../utils/token-utils'
+import { getDisputableAppByName } from '../../../utils/app-utils'
 
 import iconError from '../../../assets/iconError.svg'
 import iconCheck from '../../../assets/iconCheck.svg'
@@ -14,11 +16,11 @@ import iconCheck from '../../../assets/iconCheck.svg'
 function CreateProposalRequirements({ agreement, staking }) {
   const { disputableAppsWithRequirements, signedLatest } = agreement
   const { next } = useMultiModal()
-  const { available: availableStaked, allowance } = staking
+  const { available: availableStaked, allowance } = staking || {}
 
   const convictionAppRequirements = getDisputableAppByName(
     disputableAppsWithRequirements,
-    'Conviction Voting'
+    env('CONVICTION_APP_NAME')
   )
   const { token, actionAmount } = convictionAppRequirements
   const enoughCollateral = availableStaked.gte(actionAmount)
@@ -37,7 +39,7 @@ function CreateProposalRequirements({ agreement, staking }) {
       <InfoField label="Covenant signature and version">
         You must sign the{' '}
         <Link href="#/covenant" external={false}>
-          community covenant
+          Community Covenant
         </Link>{' '}
         in order to create a proposal. The Covenant was last updated on{' '}
         {dateFormat(agreement.effectiveFrom)}
@@ -51,8 +53,8 @@ function CreateProposalRequirements({ agreement, staking }) {
       >
         You must lock {formatTokenAmount(actionAmount, token.decimals)}{' '}
         {token.symbol} as the collateral required to create a proposal. You can
-        manage you balance on{' '}
-        <Link href="#/stake" external={false}>
+        manage your balance in the{' '}
+        <Link href="#/collateral" external={false}>
           Collateral Manager
         </Link>
       </InfoField>

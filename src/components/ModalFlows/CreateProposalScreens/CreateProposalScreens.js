@@ -1,19 +1,32 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ModalFlowBase from '../ModalFlowBase'
 import ActionFees from './ActionFees'
 import AddProposal from './AddProposal'
 import CreateProposalRequirements from './CreateProposalRequirements'
 import { useAgreement } from '../../../hooks/useAgreement'
+import { useWallet } from '../../../providers/Wallet'
 import useActions from '../../../hooks/useActions'
 import { useStakingState } from '../../../providers/Staking'
 
 function CreateProposalScreens() {
+  const [loading, setLoading] = useState(true)
+  const [transactions, setTransactions] = useState([])
+  const { account } = useWallet()
   const [agreement, agreementLoading] = useAgreement()
   const { stakeManagement, loading: stakingLoading } = useStakingState()
-  const [transactions, setTransactions] = useState([])
   const { convictionActions } = useActions()
 
   const proposalData = useRef()
+
+  useEffect(() => {
+    setLoading(true)
+    setTransactions([])
+    proposalData.current = null
+  }, [account])
+
+  useEffect(() => {
+    setLoading(agreementLoading || stakingLoading)
+  }, [agreementLoading, stakingLoading])
 
   const handleSetProposalData = useCallback(data => {
     proposalData.current = data
@@ -59,7 +72,7 @@ function CreateProposalScreens() {
         ? []
         : [
             {
-              title: 'Submit action requirements',
+              title: 'Submit proposal requirements',
               graphicHeader: false,
               content: (
                 <CreateProposalRequirements
@@ -74,7 +87,7 @@ function CreateProposalScreens() {
               content: <AddProposal setProposalData={handleSetProposalData} />,
             },
             {
-              title: 'Action deposit',
+              title: 'Proposal deposit',
               graphicHeader: false,
               content: (
                 <ActionFees
@@ -92,10 +105,11 @@ function CreateProposalScreens() {
       stakeManagement,
     ]
   )
+
   return (
     <ModalFlowBase
       frontLoad
-      loading={agreementLoading || stakingLoading}
+      loading={loading}
       transactions={transactions}
       transactionTitle="Create transaction"
       screens={screens}

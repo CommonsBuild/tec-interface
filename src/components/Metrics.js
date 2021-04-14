@@ -1,19 +1,9 @@
-import React, { useState, useMemo, useCallback } from 'react'
-import {
-  Box,
-  DropDown,
-  GU,
-  textStyle,
-  useLayout,
-  useTheme,
-} from '@tecommons/ui'
+import React from 'react'
+import { Box, GU, textStyle, useLayout, useTheme } from '@tecommons/ui'
 
 import { useAppState } from '../providers/AppState'
-import { useCurrencies } from '../hooks/useCurrencies'
 import { useUniswapHnyPrice } from '../hooks/useUniswapHNYPrice'
 import { formatDecimals, formatTokenAmount } from '../utils/token-utils'
-
-import honeySvg from '../assets/honey.svg'
 
 const Metrics = React.memo(function Metrics({
   commonPool,
@@ -24,25 +14,11 @@ const Metrics = React.memo(function Metrics({
   const { layoutName } = useLayout()
   const compactMode = layoutName === 'small'
   const { requestToken, stakeToken } = useAppState()
-  const currencies = useCurrencies()
-  const [currencyIndex, setCurrencyIndex] = useState(0)
-  const currency = useMemo(() => {
-    if (!currencies.length) {
-      return {
-        name: 'USD',
-        symbol: '$',
-        rate: 1,
-      }
-    }
-
-    return currencies[currencyIndex]
-  }, [currencyIndex, currencies])
-  const handleCurrencyChange = useCallback(currencyIndex => {
-    setCurrencyIndex(currencyIndex)
-  }, [])
-  const currencyNames = useMemo(() => {
-    return currencies.map(({ name }) => name)
-  }, [currencies])
+  const currency = {
+    name: 'USD',
+    symbol: '$',
+    rate: 1,
+  }
 
   return (
     <Box padding={3 * GU}>
@@ -60,13 +36,12 @@ const Metrics = React.memo(function Metrics({
           `}
         >
           <img
-            src={honeySvg}
+            src={tokenIconSvg}
             height="60"
             width="60"
             alt=""
             onClick={onExecuteIssuance}
             css={`
-              margin-right: ${4 * GU}px;
               cursor: pointer;
             `}
           />
@@ -96,18 +71,6 @@ const Metrics = React.memo(function Metrics({
             currency={currency}
           />
         </div>
-        <div>
-          <DropDown
-            header="Type"
-            placeholder="USD"
-            selected={currencyIndex}
-            onChange={handleCurrencyChange}
-            items={currencyNames}
-            css={`
-              top: ${3 * GU}px;
-            `}
-          />
-        </div>
       </div>
     </Box>
   )
@@ -115,7 +78,6 @@ const Metrics = React.memo(function Metrics({
 
 function Metric({ label, value, color }) {
   const theme = useTheme()
-
   return (
     <>
       <p
@@ -145,10 +107,13 @@ function TokenBalance({ label, token, value, currency }) {
 
   return (
     <>
-      <Metric label={label} value={formatTokenAmount(value, token.decimals)} />
+      <Metric
+        label={label}
+        value={`${formatTokenAmount(value, token.decimals)} ${token.symbol}`}
+      />
       <div
         css={`
-          color: ${theme.green};
+          color: ${theme.blue};
         `}
       >
         {currency.symbol} {formatTokenAmount(currencyValue, token.decimals)}
@@ -159,8 +124,6 @@ function TokenBalance({ label, token, value, currency }) {
 
 function TokenPrice({ currency }) {
   const theme = useTheme()
-  const price = useUniswapHnyPrice()
-
   return (
     <div>
       <p

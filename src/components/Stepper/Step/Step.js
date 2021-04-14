@@ -49,8 +49,8 @@ function Step({
         descColor: theme.contentSecondary,
       },
       [STEP_WORKING]: {
-        visualColor: theme.accent,
-        descColor: theme.accent,
+        visualColor: '#FFE862',
+        descColor: '#C3A22B',
       },
       [STEP_SUCCESS]: {
         visualColor: theme.positive,
@@ -193,29 +193,11 @@ function Step({
                 >
                   <TransactionBadge
                     transaction={currentHash}
-                    networkType={network.legacyNetworkType}
+                    networkType={network.type}
+                    explorerProvider={network.explorer}
                   />
                 </AnimatedSpan>
-              ) : (
-                <></>
-                // <AnimatedSpan
-                //   style={transitionProps}
-                //   css={`
-                //     display: flex;
-                //     justify-content: center;
-                //     width: 100%;
-                //   `}
-                // >
-                //   <div
-                //     css={`
-                //       height: ${3 * GU}px;
-                //       width: ${15 * GU}px;
-                //       border-radius: ${RADIUS}px;
-                //       border: 1px dashed ${theme.border};
-                //     `}
-                //   />
-                // </AnimatedSpan>
-              )}
+              ) : null}
           </Transition>
         </div>
 

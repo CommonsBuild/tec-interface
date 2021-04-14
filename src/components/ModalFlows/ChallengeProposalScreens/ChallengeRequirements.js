@@ -2,10 +2,11 @@ import React, { useCallback, useMemo } from 'react'
 import { Button, GU, Info, textStyle, useTheme } from '@tecommons/ui'
 import ModalButton from '../ModalButton'
 import InfoField from '../../../components/InfoField'
-import { formatTokenAmount } from '../../../utils/token-utils'
 import { useMultiModal } from '../../MultiModal/MultiModalProvider'
 
 import BigNumber from '../../../lib/bigNumber'
+import env from '../../../environment'
+import { formatTokenAmount } from '../../../utils/token-utils'
 import { getDisputableAppByName } from '../../../utils/app-utils'
 
 import iconError from '../../../assets/iconError.svg'
@@ -21,7 +22,7 @@ function ChallengeProposalRequirements({
 
   const convictionAppRequirements = getDisputableAppByName(
     disputableAppsWithRequirements,
-    'Conviction Voting'
+    env('CONVICTION_APP_NAME')
   )
   const { challengeAmount, token } = convictionAppRequirements
 

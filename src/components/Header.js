@@ -1,16 +1,17 @@
 import React from 'react'
-import { GU, Link } from '@tecommons/ui'
+import { GU, Link, useTheme } from '@tecommons/ui'
 import AccountModule from './Account/AccountModule'
 import Layout from './Layout'
 
-import beeSvg from '../assets/bee.svg'
+import logoSvg from '../assets/logo.svg'
 import headerBackgroundSvg from '../assets/header-background.svg'
-import logoSvg from '../assets/logotext.svg'
+import logoTextSvg from '../assets/logoText.svg'
 
 function Header({ compact }) {
-  const BeeIcon = (
+  const theme = useTheme()
+  const Icon = (
     <Link href="/#" external={false}>
-      <img src={beeSvg} height={compact ? 40 : 60} alt="" />
+      <img src={logoSvg} height={compact ? 40 : 60} alt="" />
     </Link>
   )
 
@@ -19,18 +20,18 @@ function Header({ compact }) {
   return (
     <header
       css={`
-        background: rgba(124, 224, 214, 0.6);
+        background-color: ${theme.yellow};
         margin-bottom: ${compact ? `${2 * GU}px` : 0};
       `}
     >
       <div
         css={`
-          background: url(${headerBackgroundSvg}) no-repeat;
+          /* background: url(${headerBackgroundSvg}) no-repeat; */
           background-size: 811px 600px;
           background-position: center;
-          padding: ${compact
-            ? `${3 * GU}px`
-            : `${5.625 * GU}px 0 ${8.75 * GU}px 0`};
+          padding: ${
+            compact ? `${3 * GU}px` : `${5.625 * GU}px 0 ${8.75 * GU}px 0`
+          };
         `}
       >
         <Layout>
@@ -46,9 +47,9 @@ function Header({ compact }) {
                 width: ${headerItemsWidth}px;
               `}
             >
-              {compact ? BeeIcon : <img src={logoSvg} height="30" alt="" />}
+              {compact ? Icon : <img src={logoTextSvg} height="50" alt="" />}
             </div>
-            {!compact && <div>{BeeIcon}</div>}
+            {!compact && <div>{Icon}</div>}
             <div
               css={`
                 width: ${headerItemsWidth}px;
